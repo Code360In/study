@@ -67,3 +67,5 @@
   * Matplotlib 기본기 2
   * Seaborn 
   * 판다스 스타일링
+### 컴퓨터비전의 뼈대, Backbone Network
+  * CNN
