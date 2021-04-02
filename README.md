@@ -69,3 +69,6 @@
   * 판다스 스타일링
 ### 컴퓨터비전의 뼈대, Backbone Network
   * CNN
+
+## Dacon
+  * KBO 타자 OPS 예측
