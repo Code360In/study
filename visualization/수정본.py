@@ -212,3 +212,18 @@ Writer = animation.writers['ffmpeg']
 writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)
 line_ani.save('my_wiggly_animation.mp4', writer=writer)
 
+#  결측치 제거
+from random import randint
+
+x = np.arange(10, dtype='float')    # 예제 데이터 만들기
+for i in range(3):   # 예제 데이터에 랜덤으로 결측치 3개 심기
+    idx = randint(0, 9)
+    x[idx] = np.nan
+
+print(x)
+
+idxnan = np.where(np.isnan(x))[0]
+print(idxnan)
+
+x1 = np.delete(x, idxnan)
+print(x1)
