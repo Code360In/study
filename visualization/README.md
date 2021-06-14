@@ -13,6 +13,11 @@
 ![image](https://user-images.githubusercontent.com/47103479/121811788-6407d280-cca0-11eb-8307-439cbbd43520.png)
 ![image](https://user-images.githubusercontent.com/47103479/121811789-666a2c80-cca0-11eb-91fe-fc2c7e6a058e.png)
 
+# 시각화 데이터들
+![image](https://user-images.githubusercontent.com/47103479/121917005-a1876100-cd6f-11eb-8f36-4e32e7a59d63.png)
+![image](https://user-images.githubusercontent.com/47103479/121917015-a3e9bb00-cd6f-11eb-9d22-45c1acb505ef.png)
+
+
 # 시각화필사_matplotlib
 
 ![image](https://user-images.githubusercontent.com/47103479/121811745-420e5000-cca0-11eb-9252-801f6e98df0a.png)
