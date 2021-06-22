@@ -367,3 +367,128 @@ def update_output_div(input_value):
 if __name__ == '__main__':
     app.run_server(debug=True)
 
+# 6.22
+# dash 깃허브 사이트
+https://github.com/asehmi/Data-Science-Meetup-Oxford/tree/master/GlobalCities
+
+# pdk
+## 정규화 
+'''python
+df_stop_1['norm_passengers'] = df_stop_1['passengers'].apply(np.log) / df_stop_1['passengers'].apply(np.log).max()
+
+## pydeck 레이어
+layer_poly = pdk.Layer(
+    'PolygonLayer',
+    background,
+    get_polygon='coordinates',
+    get_fill_color='[0, 0, 0, 50]',
+    pickable=True,
+    auto_highlight=True
+)
+layer_nodes = pdk.Layer(
+    'ScatterplotLayer',
+    df_stop_1,
+    get_position='[lon, lat]',
+    get_radius=80,
+    get_fill_color='[0, 255*norm_passengers, 130]',
+    pickable=True,
+    auto_highlight=True
+)
+layer_edges = pdk.Layer(
+    'LineLayer',
+    df_graph1_edges,
+    get_source_position='[src_pos_lon, src_pos_lat]',
+    get_target_position='[dst_pos_lon, dst_pos_lat]',
+    get_width='2',
+    get_color='[240, 128, 128]',
+    pickable=True,
+    auto_highlight=True
+)
+
+r = pdk.Deck(layers=[layer_poly, layer_edges, layer_nodes],
+            map_style='mapbox://styles/mapbox/outdoors-v11',
+            mapbox_key = "pk.eyJ1IjoiemlnZ3VyYXQiLCJhIjoiY2ttY3hzczd5MGg3MTJwbWNnM3lhMTlxaCJ9.DS0K_9u4jtpIdR23jRXhRA",
+            initial_view_state = view_state)
+r.to_html()
+
+## 텍스트만 출력 C G 7 M 
+df['text'] = 'text'
+layer = pdk.Layer(
+    'TextLayer',
+    df[:100],
+    get_position='[lng, lat]',
+    get_text='text',
+    get_color='[0, 255, 255]',
+    font_family='consolas',
+    sizeScale=0.5,
+    pickable=True,
+    auto_highlight=True
+)
+
+center = [126.986, 37.565]
+view_state = pdk.ViewState(
+    longitude=center[0],
+    latitude=center[1],
+    zoom=10)
+
+r = pdk.Deck(layers=[layer], initial_view_state=view_state)
+r.show()
+
+## 텍스트 칼라
+COLOUR_RANGE = [
+    [29,53,87,220],
+    [69,123,157,220],
+    [168,218,220,220],
+    [241,250,238,220],
+    [239,35,60,220],
+    [217,4,41,220]
+]
+
+TEXT_COLOUR = {
+    'Black': [0,0,0,255],
+    'Red': [189,27,33,255],
+    'Green': [0,121,63,255],
+    'Gold': [210,160,30,255]
+}
+
+scatterplot_layer = pdk.Layer(
+    type='ScatterplotLayer',
+    id='scatterplot-layer',
+    data=mapdata,
+    pickable=True,
+    get_position=['longitude', 'latitude'],
+    get_radius='normValue',
+    radius_min_pixels=2*radius_scale,
+    radius_max_pixels=30*radius_scale,
+    get_fill_color='fill_color',
+    get_line_color=[128,128,128, 200],
+    get_line_width=4000,
+    stroked=True,
+    filled=True,
+    opacity=opacity
+)
+text_layer = pdk.Layer(
+    type='TextLayer',
+    id='text-layer',
+    data=mapdata,
+    pickable=True,
+    get_position=['longitude', 'latitude'],
+    get_text='Location',
+    get_color=text_colour,
+    billboard=False,
+    get_size=18,
+    get_angle=0,
+    # Note that string constants in pydeck are explicitly passed as strings
+    # This distinguishes them from columns in a data set
+    get_text_anchor='"middle"',
+    get_alignment_baseline='"center"'
+)
+
+if layer_choice == 'Scatterplot':
+    layers = [scatterplot_layer]
+elif layer_choice == 'Text':
+    layers = [text_layer]
+else:
+    layers = [scatterplot_layer, text_layer]
+ 
+'''
