@@ -1,3 +1,107 @@
+# 6.23
+# Kaggle kernel
+## Visualization map using Folium 
+## Visualization map using plotly 
+## Visualization map using Pydeck 
+## Visualization Dashboard using Dash
+
+# JupyterHub
+- https://jupyterhub.readthedocs.io/en/stable/index.html
+- https://cdsdashboards.readthedocs.io/en/stable/
+
+# Volia Jupyter Notebook
+- https://ichi.pro/ko/voilaleul-sayonghayeo-jupyter-noteubug-eseo-daehwa-hyeong-daesi-bodeu-mandeulgi-200425063371098
+
+# streamlit & pdk 
+import streamlit as st
+import pydeck as pdk
+
+https://github.com/nikkisharma536/streamlit_app/blob/master/covid_data.py
+
+## pydeck - mapbox style
+map_style = 'mapbox://styles/mapbox/outdoors-v11'
+
+## FE - 원하는 데이터 찾기
+test = df_cois.loc[df_cois['버스정류장ARS번호'].isin(arss)]
+n_of_stops = len(df_cois.loc[df_cois['버스정류장ARS번호'].isin(arss)]['버스정류장ARS번호'].unique())
+
+
+## pydeck - 경로선 시각화
+layer_path = pdk.Layer(
+    'PathLayer',
+    bus_road,
+    get_path='lines',
+    get_width = '80',
+    get_color='[139,69,19]',
+    pickable=True,
+    auto_highlight=True
+)
+
+
+## pydeck 
+변수 : 편의점 상호명 adm_cd 경도 위도
+df_7 = df_s[df_s['편의점'] == '세븐일레븐']
+df_7.reset_index()
+df_C = df_s[df_s['편의점'] == 'CU']
+df_C.reset_index()
+df_G = df_s[df_s['편의점'] == 'GS']
+df_G.reset_index()
+df_M = df_s[df_s['편의점'] == '미니스톱']
+df_M.reset_index()
+
+
+layer_poly = pdk.Layer(
+ 'PolygonLayer',
+ df,
+ get_polygon = 'coordinates',
+ get_fill_color = '[0,0,0,50]',
+ pickable = True,
+ auto_highlight = True
+)
+layer_7 = pdk.Layer(
+ 'ScatterplotLayer',
+ df_7
+ get_position = '[경도, 위도]',
+ get_radius = 100,
+ get_fill_color = '[255,0,0]',
+ pickable = True
+ auto_highlight = True
+)
+layer_C = pdk.Layer(
+ 'ScatterplotLayer',
+ df_C
+ get_position = '[경도, 위도]',
+ get_radius = 100,
+ get_fill_color = '[189,27,33,255]',
+ pickable = True
+ auto_highlight = True
+)
+layer_G = pdk.Layer(
+ 'ScatterplotLayer',
+ df_G
+ get_position = '[경도, 위도]',
+ get_radius = 100,
+ get_fill_color = '[189,27,33,255]',
+ pickable = True
+ auto_highlight = True
+)
+layer_M = pdk.Layer(
+ 'ScatterplotLayer',
+ df_M
+ get_position = '[경도, 위도]',
+ get_radius = 100,
+ get_fill_color = '[189,27,33,255]',
+ pickable = True
+ auto_highlight = True
+)
+
+r = pdk.Deck(layers=[layer_poly, layer_7 , layer_C, layer_G, layer_M ],
+            map_style='mapbox://styles/mapbox/outdoors-v11',
+            mapbox_key = API키,
+            initial_view_state = view_state)
+r.to_html()
+
+
 # 업종별 데이터 
 - G유동인구(성별 / 시간대별 보행 인구, 낮 상주/밤 상주 인구수)
 - 인구정보 : 소멸위험지수 사용! 시군구 기반 -> 행정동??
