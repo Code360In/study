@@ -1,4 +1,13 @@
 # Dash_plotly
+# Generic Crossfilter Recipe
+![image](https://user-images.githubusercontent.com/47103479/123814044-57d27500-d930-11eb-8fa8-fe5511ac3cd9.png)
+
+# Update Graphs on Hover
+![image](https://user-images.githubusercontent.com/47103479/123812318-f4941300-d92e-11eb-8777-3ba228a36f4c.png)
+
+# Interactive Visualizations
+![image](https://user-images.githubusercontent.com/47103479/123810564-797e2d00-d92d-11eb-87ce-f9684bac664e.png)
+
 # Dash App With State
 ![image](https://user-images.githubusercontent.com/47103479/123637387-ebd10d80-d858-11eb-9ca5-d1e2305e3b59.png)
 ![image](https://user-images.githubusercontent.com/47103479/123637770-5bdf9380-d859-11eb-844a-409246f75624.png)
