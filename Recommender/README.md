@@ -60,3 +60,5 @@ y_test_predict
 - 유클리드 거리
   
   ![image](https://user-images.githubusercontent.com/47103479/124386339-e40be000-dd14-11eb-9694-5c9f43d5851a.png)
+  
+# numpy
