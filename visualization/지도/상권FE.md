@@ -1,3 +1,4 @@
+#commit
 
 # import
 import streamlit as st
@@ -155,7 +156,7 @@ layer_path = pdk.Layer(
     auto_highlight=True
 )
 
-
+Pt
 ## pydeck 
 변수 : 편의점 상호명 adm_cd 경도 위도
 df_7 = df_s[df_s['편의점'] == '세븐일레븐']
