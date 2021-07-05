@@ -53,6 +53,9 @@ y_test_predict = model.predict(X_test)
 # 실행 코드
 y_test_predict
 ```
+## numpy
+- print(np.nansum(A)) - nan 값들만 제외하고 계산
+- print(np.nanmean(A)) - nan인 원소를 제외한 다른 모든 원소들의 평균값을 계산
 
 # 협업 필터링 
 - 수많은 유저 데이터들이 협업해서 상품 추천 
@@ -61,4 +64,27 @@ y_test_predict
   
   ![image](https://user-images.githubusercontent.com/47103479/124386339-e40be000-dd14-11eb-9694-5c9f43d5851a.png)
   
-# numpy
+```python 
+import numpy as np
+from math import sqrt
+
+
+def distance(user_1, user_2):
+    """유클리드 거리를 계산해주는 함수"""
+    return sqrt(np.sum(np.square(user_1 - user_2)))
+    # 코드를 쓰세요 
+
+def distance(user_1, user_2):
+    """유클리드 거리를 계산해주는 함수"""
+    return sqrt(np.sum((user_1 - user_2)**2))
+
+# 실행 코드
+user_1 = np.array([0, 1, 2, 3, 4, 5])
+user_2 = np.array([0, 1, 4, 6, 1, 4])
+
+distance(user_1, user_2)
+```
+- 코사인 유사도 
+
+- ![image](https://user-images.githubusercontent.com/47103479/124489958-84810380-ddec-11eb-936a-0bbfb2124822.png)
+  
