@@ -24,3 +24,7 @@
 - 서울 발달상권, 골목상권 시각화
 
 ![image](https://user-images.githubusercontent.com/47103479/124206818-0d631b00-db1f-11eb-8c29-a8c01e206eb4.png)
+
+## grid
+
+![image](https://user-images.githubusercontent.com/47103479/124882470-5e857a00-e00b-11eb-9f8b-266b1bc50da9.png)
