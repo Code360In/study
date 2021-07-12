@@ -60,6 +60,16 @@ y_test_predict
 # 협업 필터링 
 - 수많은 유저 데이터들이 협업해서 상품 추천 
 - 비슷한 유저를 찾아내서, 이 유저들의 평점을 이용해서 추천
+- 장점
+ * 속성을 찾거나 정할 필요가 없다
+ * 좀 더 폭넓은 상품을 추천할 수 있다
+ * 내용 기반 추천보다 성능이 더 좋게 나오는 경우가 많다
+- 단점
+   * 데이터가 많아야 한다
+     * 유저 한 명이 열심히 평점을 줘도 다른 사람들도 열심히 평점을 줘야 한다.
+     * 새로운 물건이나 유저에게 추천해 주기 힘들다
+   * 인기가 많은 소수의 상품이 추천 시스템을 장악할 수 있다
+   * 어떤 상품이 왜 추천됐는지 정확히 알기 힘들다
 - 유클리드 거리
   
   ![image](https://user-images.githubusercontent.com/47103479/124386339-e40be000-dd14-11eb-9694-5c9f43d5851a.png)
@@ -238,3 +248,40 @@ rating_data = pd.read_csv(RATING_DATA_PATH, index_col='user_id').values
 # 5개의 이웃들을 써서 유저 0의 영화 3에 대한 예측 평점 구하기
 predict_user_rating(rating_data, 5, 0, 3)  
 ```
+
+- 상품 기반 필터링
+ * 비슷한 상품을 써서 예측: 상품 기반 협업 필터링 
+ * 유저들이 상품보다 복잡하기 때문에 유저 기반 협업 필터링에 비해 성능이 더 좋은 경우가 많다
+ * r_i : 영화 i에 대한 평점 데이터 벡터
+ * r_i(x) : 유저 x의 영화 i에 대한 평점
+ * N: 유저 x가 평가한 영화 중, 영화 i와 가장 비슷한 영화 k 개의 집합
+
+![image](https://user-images.githubusercontent.com/47103479/125294046-ed252e80-e35e-11eb-8d5d-ac2cfc042357.png)
+
+## 행렬 인수분해
+- 인수분해
+  * 자연수나 다항식을 여러 개의 인수의 곱으로 변형하는 수학 개념
+
+- 내용 기반
+  * 영화 속성(입력 변수) + 평점 데이터(목표 변수) ->(학습) 유저 취향 / 선형 회귀 경사 하강법으로 학습
+- 유저 취향과 영화 속성 모두 머신러닝으로 학습 
+ 
+- 데이터 표현하기
+   * 영화 속성 
+![image](https://user-images.githubusercontent.com/47103479/125304894-eb606880-e368-11eb-9585-ac1d83ea2b15.png)
+![image](https://user-images.githubusercontent.com/47103479/125304930-f0bdb300-e368-11eb-8074-1cdf481670b2.png)
+
+   * 유저 취향
+![image](https://user-images.githubusercontent.com/47103479/125305023-03d08300-e369-11eb-84bd-99d8601b5c8a.png)
+![image](https://user-images.githubusercontent.com/47103479/125305123-15b22600-e369-11eb-8173-bcc984f6f1ff.png)
+
+   * 평점 예측 값
+![image](https://user-images.githubusercontent.com/47103479/125305221-25316f00-e369-11eb-9acc-68fbebcbabd8.png)
+
+  * 평점 실제 데이터
+![image](https://user-images.githubusercontent.com/47103479/125305313-38443f00-e369-11eb-830e-94343e2e9ecd.png)
+
+  * 평점 데이터가 있는지 없는지(줬으면1, 아니면 0)
+![image](https://user-images.githubusercontent.com/47103479/125305396-46925b00-e369-11eb-8805-34c1a13bb095.png)
+
+  
