@@ -284,4 +284,63 @@ predict_user_rating(rating_data, 5, 0, 3)
   * 평점 데이터가 있는지 없는지(줬으면1, 아니면 0)
 ![image](https://user-images.githubusercontent.com/47103479/125305396-46925b00-e369-11eb-8805-34c1a13bb095.png)
 
+- 손실 함수 J
+
+![image](https://user-images.githubusercontent.com/47103479/125468216-09f75901-67d1-4157-91cf-c170c20e7bb6.png)
+
+```python
+import numpy as np
+
+def cost(prediction, R):
+    """행렬 인수분해 알고리즘의 손실을 계산해주는 함수"""
+    # 코드를 쓰세요
+    return np.nansum((prediction-R)**2)
+                
+    
+# 실행 코드
+
+# 예측 값 행렬
+prediction = np.array([
+    [4, 4, 1, 1, 2, 2],
+    [4, 4, 3, 1, 5, 5],
+    [2, 2, 1, 1, 3, 4],
+    [1, 3, 1, 4, 2, 2],
+    [1, 2, 4, 1, 2, 5],
+    ])
+
+# 실제 값 행렬
+R = np.array([
+    [3, 4, 1, np.nan, 1, 2],
+    [4, 4, 3, np.nan, 5, 3],
+    [2, 3, np.nan, 1, 3, 4],
+    [1, 3, 2, 4, 2, 2],
+    [1, 2, np.nan, 2, 2, 4],
+    ])
+
+cost(prediction, R)
+```
+
+- 경사 하강법
+   * 손실을 가장 빨리 줄이는 방향으로 세타와 x 값들을 바꿔주는 방법 
+
+![image](https://user-images.githubusercontent.com/47103479/125469837-58ef3244-210f-48eb-b1c8-6e26a37e51cb.png)
+![image](https://user-images.githubusercontent.com/47103479/125469862-b11bd8e9-bdb8-4de1-ba52-0a11893a43ca.png)
+
+- 선형 회귀 손실 함수 볼록도
+![image](https://user-images.githubusercontent.com/47103479/125470050-bd365758-b971-47a2-b61f-d637344b202a.png)
+
+- 행렬 인수분해 손실 함수 볼록도
+![image](https://user-images.githubusercontent.com/47103479/125470112-43c02305-c61a-4ff1-a0f1-a393a0ad0f33.png)
+ 
+- 과적합과 정규화 복습
+![image](https://user-images.githubusercontent.com/47103479/125470197-df6a578d-9646-47f1-830a-2b8f1460011f.png)
+
+- 행렬 인수분해와 정규화
+![image](https://user-images.githubusercontent.com/47103479/125470247-b226899f-d596-409e-90f4-8e70e1f0b5d7.png)
+![image](https://user-images.githubusercontent.com/47103479/125470255-75fe3fc6-d961-47fc-b4ac-f426fe46611b.png)
+![image](https://user-images.githubusercontent.com/47103479/125470273-a7b781cc-4abc-4866-950a-b6ee070f57aa.png)
+
+
+
+
   
