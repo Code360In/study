@@ -340,7 +340,7 @@ cost(prediction, R)
 ![image](https://user-images.githubusercontent.com/47103479/125470255-75fe3fc6-d961-47fc-b4ac-f426fe46611b.png)
 ![image](https://user-images.githubusercontent.com/47103479/125470273-a7b781cc-4abc-4866-950a-b6ee070f57aa.png)
 
-- 유저/속성 행렬 초기화해보기
+- 유저 / 속성 행렬 초기화해보기
 ```python
 import numpy as np
 
