@@ -214,7 +214,6 @@ def get_k_neighbors(user_id, rating_data, k):
     # 마지막에 거리 데이터를 담을 열 추가한다
     distance_data = np.append(distance_data, np.zeros((distance_data.shape[0], 1)), axis=1)
     
-    # 코드를 쓰세요.
     for i in range(len(distance_data)):
         row = distance_data[i]
         
