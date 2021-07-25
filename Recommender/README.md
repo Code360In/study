@@ -235,9 +235,7 @@ def predict_user_rating(rating_data, k, user_id, movie_id,):
     # 빈값들이 채워진 새로운 행렬을 만든다
     filled_data = fill_nan_with_user_mean(filtered_data)
     # 유저 user_id와 비슷한 k개의 유저 데이터를 찾는다
-    neighbors = get_k_neighbors(user_id, filled_data, k)
-    
-    # 코드를 쓰세요
+    neighbors = get_k_neighbors(user_id, filled_data, k)    
     return np.mean(neighbors[:, movie_id])
     
     
