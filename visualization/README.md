@@ -5,8 +5,7 @@
 ![image](https://user-images.githubusercontent.com/47103479/128440879-02e83d43-a232-4926-965f-fcc35ba1cb38.png)
 ![image](https://user-images.githubusercontent.com/47103479/128440906-e83cf6de-7116-4b23-80c8-ec8ca9f1f2cc.png)
 ![image](https://user-images.githubusercontent.com/47103479/128440921-0d070473-74af-4026-ab5b-3b05246d0c5f.png)
-![image](https://user-images.githubusercontent.com/47103479/128440951-7dcee1f9-19b5-4cf0-a4fb-b9c42dda23d6.png)
-
+![image](https://user-images.githubusercontent.com/47103479/128532965-db87909f-407d-4988-945b-2f8e1b4e72f9.png)
 ```python
 fig_satisfy = Tab()
 
@@ -15,7 +14,7 @@ pie_total =(
                .add_xaxis(df['year'].tolist())
                .add_yaxis('', df['val'].tolist(), label_opts=opts.LabelOpts(position="right",formatter="{c}억"))
                .reversal_axis()
-               .set_global_opts(title_opts=opts.TitleOpts(title="세계 비건 화장품 시장 성장 예측", 
+               .set_global_opts(title_opts=opts.TitleOpts(title="세계 비건 화장품 시장 성장 예측", pos_left='center'
                                                           #subtitle="마우스를 막대에 올려 정확한 수치를 확인해보세요!"
                                                           ),
                                 yaxis_opts=opts.AxisOpts(name_location = "start")
