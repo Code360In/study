@@ -1,4 +1,14 @@
 # 데이터 시각화 공부
+# 시각화 
+## 클린뷰티
+![image](https://user-images.githubusercontent.com/47103479/128440835-218ce71a-d71e-42f3-9257-f865546c8805.png)
+![image](https://user-images.githubusercontent.com/47103479/128440879-02e83d43-a232-4926-965f-fcc35ba1cb38.png)
+![image](https://user-images.githubusercontent.com/47103479/128440906-e83cf6de-7116-4b23-80c8-ec8ca9f1f2cc.png)
+![image](https://user-images.githubusercontent.com/47103479/128440921-0d070473-74af-4026-ab5b-3b05246d0c5f.png)
+![image](https://user-images.githubusercontent.com/47103479/128440951-7dcee1f9-19b5-4cf0-a4fb-b9c42dda23d6.png)
+
+
+# 필사 
 - 데이터 시각화 필사를 하면서 공부하고있습니다.
 (필사 자료 : https://jehyunlee.github.io/)
 
