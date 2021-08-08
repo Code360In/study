@@ -1,6 +1,6 @@
 # 데이터 시각화 공부
 # 시각화 
-## 클린뷰티
+## 클린뷰티 시각화
 ![image](https://user-images.githubusercontent.com/47103479/128440835-218ce71a-d71e-42f3-9257-f865546c8805.png)
 ![image](https://user-images.githubusercontent.com/47103479/128440879-02e83d43-a232-4926-965f-fcc35ba1cb38.png)
 ![image](https://user-images.githubusercontent.com/47103479/128440906-e83cf6de-7116-4b23-80c8-ec8ca9f1f2cc.png)
