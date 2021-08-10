@@ -6,6 +6,9 @@
 ![image](https://user-images.githubusercontent.com/47103479/128440906-e83cf6de-7116-4b23-80c8-ec8ca9f1f2cc.png)
 ![image](https://user-images.githubusercontent.com/47103479/128440921-0d070473-74af-4026-ab5b-3b05246d0c5f.png)
 ![image](https://user-images.githubusercontent.com/47103479/128532965-db87909f-407d-4988-945b-2f8e1b4e72f9.png)
+![image](https://user-images.githubusercontent.com/47103479/128711858-e18f1214-ce90-4ded-bc31-0077bb9622b4.png)
+![image](https://user-images.githubusercontent.com/47103479/128711944-5e5fb516-0b6e-4d44-a01a-7b40c570fc69.png)
+
 ```python
 fig_satisfy = Tab()
 
