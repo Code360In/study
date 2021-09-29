@@ -1,6 +1,6 @@
 # 코드잇
-## 머신 러닝 실전_추천 시스템
-![image](https://user-images.githubusercontent.com/47103479/126493428-ad05dbd6-eb71-44ef-8e49-c924d1c8a9d8.png)
+![image](https://user-images.githubusercontent.com/47103479/135282585-44dd140a-a215-4f58-96c4-fbea4f24615a.png)
 
-## 알고리즘의 정석 
-![image](https://user-images.githubusercontent.com/47103479/130987516-fdc26601-c661-4641-908c-68e95f89952d.png)
+![image](https://user-images.githubusercontent.com/47103479/135282542-fc6e0b5b-cd3a-435e-b3e7-34f303e650a1.png)
+
+![image](https://user-images.githubusercontent.com/47103479/135282513-806c2f1d-528d-4f0f-90f8-bd6a5c3c2f1d.png)
