@@ -48,3 +48,25 @@
   * systemctl stop docker
   * curl 172.16.132.32
   * systemctl status docker # 도커 상태 확인
+
+## 쿠버네티스 오브젝트
+- 쿠버네티스의 기본 오브젝트 
+- 네임스페이스 
+![image](https://user-images.githubusercontent.com/47103479/136144386-8222cc8d-5884-443d-9079-8dc931026620.png)
+
+- 볼륨 : 영속적인 데이터를 보존하기 위해 
+![image](https://user-images.githubusercontent.com/47103479/136144589-91da0a7b-a4fd-425a-9690-43b4008571ac.png)
+![image](https://user-images.githubusercontent.com/47103479/136144761-220eb8dc-f286-4945-a469-62b83dc0fa98.png)
+
+- Pod : 자유롭게 생성하고 삭제 가능 
+``` kube
+- kubectl edit deployment del-deploy
+- :wq 저장하고 나가기
+```
+
+## 쿠버네티스 팁 
+- kubectl <tab> <tab> (k <tab> <tab>)
+- alias
+ 
+## 쿠버네티스 업그레이드
+![image](https://user-images.githubusercontent.com/47103479/136145525-cd0ccedb-5514-4e50-8472-e37a7dda2a26.png)
