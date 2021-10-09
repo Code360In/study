@@ -83,3 +83,27 @@ html_line="""
 """
 st.markdown(html_line, unsafe_allow_html=True)
 ```
+
+# hydrait
+- page menu
+``` python
+pip install -U hydralit_components
+pip install jwt
+!pip install compress_pickle
+
+import hydralit as hy
+
+app = hy.HydraApp(title='Simple Multi-Page App')
+
+@app.addapp()
+def my_home():
+ hy.info('Hello from app1')
+
+@app.addapp()
+def app2():
+ hy.info('Hello from app 2')
+
+
+#Run the whole lot, we get navbar, state management and app isolation, all with this tiny amount of work.
+app.run()
+```
