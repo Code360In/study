@@ -7,3 +7,6 @@
 
 # 인프런
 ![image](https://user-images.githubusercontent.com/47103479/136217037-1f20cc63-50dc-402d-86a4-81856a585ee2.png)
+
+# T아카데미
+![image](https://user-images.githubusercontent.com/47103479/136701444-7c32efeb-9cd3-4350-bb77-406843614f84.png)
