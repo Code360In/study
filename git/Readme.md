@@ -30,6 +30,13 @@
 		(3) working directory도 특정 커밋처럼 리셋(--hard는 여기까지 수행)
 		그리고 이때 커밋 아이디 대신 HEAD의 위치를 기준으로 한 표기법(예 : HEAD^, HEAD~3)을 사용해도 됨
 - $ git tag [태그 이름] [커밋 아이디] : 특정 커밋에 태그를 붙임
+- $ git push --set-upstream origin premium : 로컬 레포지토리의 내용을 맨 처음 리모트 레포지토리에 보낼 때
+- git branch [새 브랜치 이름] : 새로운 브랜치를 생성
+- git checkout -b [새 브랜치 이름] : 새로운 브랜치를 생성하고 그 브랜치로 바로 이동
+- git branch -d [기존 브랜치 이름] : 브랜치 삭제
+- git checkout [기존 브랜치 이름] : 그 브랜치로 이동
+- git merge [기존 브랜치 이름] : 현재 브랜치에 다른 브랜치를 머지
+- git merge --abort : 머지를 하다가 conflict가 발생했을 때, 일단은 머지 작업을 취소하고 이전 상태로 돌아감
 
 ``` 
 
@@ -142,4 +149,44 @@
      
  ![image](https://user-images.githubusercontent.com/47103479/136215840-953144a1-c2db-4cf8-a31a-fae490158135.png)
  ![image](https://user-images.githubusercontent.com/47103479/136216251-b6e6ae82-1f88-428c-b597-1d3d92b77105.png)
+
+# 브랜치
+- 하나의 코드 흐름
+- 마스터 브랜치 : 레포지토리를 만들고 커밋을 하면 자동으로 생기는 브랜치(기본 브랜치)
+
+![image](https://user-images.githubusercontent.com/47103479/136790568-e39ce9f9-a5ae-483a-976e-31eced9185f9.png)
+![image](https://user-images.githubusercontent.com/47103479/136790692-23a83280-4cce-41e3-8704-9ca9f42235ef.png)
+![image](https://user-images.githubusercontent.com/47103479/136790997-ad85a78c-d72b-4de6-9b5d-233203511f19.png)
+- git remote add origin https://github.com/kyuri-dev/Math_Box.git
+	- remote : 리모트 레포지토리에 관한 작업을 할 때 쓰는 커맨드
+	- add : 새로운 리모트 레포지토리등록
+	- url을 origin이라는 이름으로 등록 
+- git push -u origin master
+	- 현재 로컬 레포지토리에 있는 master 브랜치의 내용(=master 브랜치와 관계된 모든 커밋들)을 origin이라는 리모트 레포지토리로 보냄
+	- -u는 --set-upstream 
+- git push origin master:master 
+	-  master:master에서 더 먼저 나오는 master는 로컬 레포지토리의 master 브랜치(~에서)/더 뒤에 나오는 master는 리모트 레포지토리의 master 브랜치(~으로)를 나타냄 
+
+- HEAD(어떤 커밋 하나를 가리킴) -> 어떤 커밋을 가리키는존재 (branch를 가르켜) 
+- branch(하나의 코드 관리 흐름)->어떤 커밋을 가르키는 존재(포인터)
+![image](https://user-images.githubusercontent.com/47103479/136795311-6b99213a-8913-4ab2-b2ec-5c335230e370.png)
+
+-git reset [--hard 또는 --soft 또는 --mixed] 9033 
+	- HEAD는 여전히 같은 브랜치를 가리키고, HEAD가 가리키는 브랜치가 다른 특정 커밋을 가리키게 됨
+	- 이 때문에 결국 HEAD가 간접적으로 가리키던 커밋도 바뀌게 됨
+	- 과거의 커밋으로 git reset을 한다고 그 이후의 커밋들이 삭제되는 게 절대 아니고 계속 남아있음
+	- git reset은 과거의 커밋뿐만 아니라 현재 HEAD가 가리키는 커밋 이후의 커밋으로도 할 수 있음
+![image](https://user-images.githubusercontent.com/47103479/136795674-0915022e-b0cb-4fad-b3c1-6f6766ce85eb.png)
+
+- Fast-forward 머지
+	- 새로운 커밋이 생기는 게 아니라 단지 브랜치가 이동하게 되는 머지를 Fast-forward 머지
+	- Fast-forward는 어떤 영상이나 소리를 빨리감기(앞으로 감기)한다는 뜻으로 지금 master 브랜치가 더 최신 커밋으로 이동
+- 3-way 머지 
+	-  base때의 내용과 비교했을 때 달라진 부분이 있는 것이 우선시
+	-  두 브랜치에서 둘다 변화가 일어났을 때는 Conflict를 발생시켜서 사용자가 스스로 선택하게끔 함
+
+# 협업하기 
+- 파일 수정해서 add . -> commit으로 메시지 수정 -> push 하면 에러발생 -> git pull을 통해서 다시 add하고 commit(:wq)한뒤에 push하기
+![image](https://user-images.githubusercontent.com/47103479/136814767-f7a610c2-ba1c-4972-a93d-45efddebc029.png)
+![image](https://user-images.githubusercontent.com/47103479/136814928-681a6439-60b9-4c7e-a91e-16fdaf8b415d.png)
 
