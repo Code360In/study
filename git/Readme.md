@@ -31,12 +31,15 @@
 		그리고 이때 커밋 아이디 대신 HEAD의 위치를 기준으로 한 표기법(예 : HEAD^, HEAD~3)을 사용해도 됨
 - $ git tag [태그 이름] [커밋 아이디] : 특정 커밋에 태그를 붙임
 - $ git push --set-upstream origin premium : 로컬 레포지토리의 내용을 맨 처음 리모트 레포지토리에 보낼 때
-- git branch [새 브랜치 이름] : 새로운 브랜치를 생성
-- git checkout -b [새 브랜치 이름] : 새로운 브랜치를 생성하고 그 브랜치로 바로 이동
-- git branch -d [기존 브랜치 이름] : 브랜치 삭제
-- git checkout [기존 브랜치 이름] : 그 브랜치로 이동
-- git merge [기존 브랜치 이름] : 현재 브랜치에 다른 브랜치를 머지
-- git merge --abort : 머지를 하다가 conflict가 발생했을 때, 일단은 머지 작업을 취소하고 이전 상태로 돌아감
+- $ git branch [새 브랜치 이름] : 새로운 브랜치를 생성
+- $ git checkout -b [새 브랜치 이름] : 새로운 브랜치를 생성하고 그 브랜치로 바로 이동
+- $ git branch -d [기존 브랜치 이름] : 브랜치 삭제
+- $ git checkout [기존 브랜치 이름] : 그 브랜치로 이동
+- $ git merge [기존 브랜치 이름] : 현재 브랜치에 다른 브랜치를 머지
+- $ git merge --abort : 머지를 하다가 conflict가 발생했을 때, 일단은 머지 작업을 취소하고 이전 상태로 돌아감
+- $ git fetch : 로컬 레포지토리에서 현재 HEAD가 가리키는 브랜치의 업스트림(upstream) 브랜치로부터 최신 커밋들을 가져옴(가져오기만 한다는 점에서, 가져와서 머지까지 하는 git pull과는 차이가 있음)
+- $ git blame : 특정 파일의 내용 한줄한줄이 어떤 커밋에 의해 생긴 것인지 출력 
+- $ git revert : 특정 커밋에서 이루어진 작업을 되돌리는(취소하는) 커밋을 새로 생성
 
 ``` 
 
@@ -190,3 +193,37 @@
 ![image](https://user-images.githubusercontent.com/47103479/136814767-f7a610c2-ba1c-4972-a93d-45efddebc029.png)
 ![image](https://user-images.githubusercontent.com/47103479/136814928-681a6439-60b9-4c7e-a91e-16fdaf8b415d.png)
 
+- git fetch(리모트 레포지토리의 브랜치를 검토해야할 때) -> git diff로 비교 / git pull(리모트 레포지토리의 브랜치를 검토할 필요없이 바로 합치고 싶을 때) => git pull = git fetch + git merge 
+	- 리모트 레포지토리에서 가져온 브랜치의 내용을 머지하기 전에 점검해야할 필요가 있을 때 사용 
+	- 리모트 레포지토리에 있는 브랜치의 내용과 내가 작성한 코드를 비교해서 잘못된 부분이 없는지 검토해야할 때 
+- 리모트 레포지토리의 브랜치에 문제가 있을 때 
+	- 잘못된 코드를 추가한 개발자에게 함수를 지우고 다시 리모트 레포지토리에 올려달라고 하기
+	- 잘못된 부분을 알아서 해결하고 다시 git push 하기 
+	![image](https://user-images.githubusercontent.com/47103479/136962237-177f0678-7487-4319-9a07-479d4cbf6a4e.png)
+
+- git blame : 어떤 파일의 특정 코드를 누가 작성했는지 찾아내기 위한 커맨드 
+![image](https://user-images.githubusercontent.com/47103479/136962907-3ebfaabb-d86c-47a2-818e-c31e6cac6c4d.png)
+
+- git revert - 커밋하고 리버트 / 여러개의 커밋 리버트 가능 
+![image](https://user-images.githubusercontent.com/47103479/136963626-466cff51-5f4b-494e-b64f-90e15c11c1ad.png)
+![image](https://user-images.githubusercontent.com/47103479/136963849-de7624ef-d494-4c84-a1af-a20072822e0e.png)
+
+- git reset 파일이름 : 해당 이름으로 리셋 
+- git reflog HEAD가 가리켰던 commit들의 id 확인
+- git log --pretty=oneline --all --graph : --graph -> 커밋 히스토리가 각 브랜치와의 관계가 잘 드러나도록 그래프 형식으로 출력 
+
+- GUI 환경에서 작업 : GitKraken, Sourcetree 등 
+- Sourcetree tutorial :  https://support.atlassian.com/bitbucket-cloud/docs/create-a-new-repository/
+
+- git rebase : 브랜치를 베이스로 재지정한다
+	- git rebase --continue
+	- rebase는 새로운 커밋을 만들지 않음
+	- rebase로 만들어진 커밋 히스토리는 merge로 만들어진 커밋 히스토리보다 좀 더 깔끔
+	- rebase : 커밋 히스토리를 깔끔하게 유지하는게 더 중요한 경우  <-> merge : 두 브랜치를 합쳤다는 정보가 커밋 히스토리에 꼭 남아야 하는 경우
+
+- git stash 
+	- 어떤 브랜치에서 하던 작업을 아직 커밋하지 않았는데 다른 브랜치로 가야하는 상황에서 작업 중이던 내용을 잠깐 저장하고 싶을 때
+	- working directory에서 작업하던 내용을 깃이 따로 보관(stack - 어떤 데이터를 저장하는 구조) 
+	- 최근 커밋 이후로 작업했던 내용은 모두 스택에 옮겨지고 working directory 내부는 다시 최근 커밋의 상태로 초기화
+	![image](https://user-images.githubusercontent.com/47103479/136980938-97904d18-4fcc-4f64-b1d8-83c89f0507ed.png)
+	
