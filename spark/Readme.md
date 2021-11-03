@@ -53,3 +53,35 @@
       - 애플리케이션을 구성하는 작업을 실행 -> 드라이버에 결과를 전송
       - 사용자 프로그램에서 캐시하는 RDD를 저장하기 위한 메모리 저장소 제공 
     - Task : executor에 할당 되는 작업의 단위 
+ - RDD의 연산
+  - Transformation : RDD에서 새로운 RDD를 생성하는 함수
+  - action : RDD에서 RDD가 아닌 타입의 data로 변환하는 함수들 
+  - Partition
+
+- Spark 설치 및 환경설정
+  - 대량의 데이터를 고속 병렬분산처리
+  - 스토리지 I/O와 네트워크 I/O를 최소화하도록 처리
+  - 동일한 데이터에 대한 변환처리가 연속으로 이루어지는 경우와 머신러닝처럼 결과셋을 여러 번 반복해  처리 고속화
+  - 한 대의 노드로 처리할 수 있는 용량보다 더 큰 데이터셋에 대해 시행착오가 가능한 환경 제공
+  - 배치처리, 스트림처리,  SQL처리와 같은 서로 다른 형태의 애플리케이션을 하나의 환경에 통합하여 사용 가능 
+
+- PySpark
+  - 스파크의 메인 추상화는 RDD
+  - apache spark를 파이썬에서 실행하기 위한 api
+  - SparkContext를 생성하는 것으로 시작 
+
+# Apache spark RDD 프로그래밍 
+- RDD Operation
+  - 스파크 내부에서 존재하는 분산 데이터에 대한 모델, 기본 데이터 구조
+  - 분산된 변경불가 자바 객체 컬렉션
+  - RDD는 읽기 전용으로 분할된 레코드의 모음
+  - 클러스터의 노드들 간에 파티션된 엘리먼트의 컬렉션들이며 파티션이 분산처리 단위
+  - RDD, DataFrame, Dataset 
+- transformation
+  - filter, map, flatmap, zip, rdeuceByKey, join 
+- action : RDD의 요소들을 이용해 어떤 결과값을 얻어내는 연산 
+- Partion : 하나의 RDD는 여러 개의 파티션으로 나뉘어짐, 
+- Lineage : RDD 연산의 순서를 기록 
+- Shared Variables(공유 변수) : 함수가 Spark오퍼레이션에 전달되면(map 혹은 리듀스) 원격자의 클러스터 노드에서 수행 
+  - Broadcast Variables : 각 노드에 캐싱된 읽기전용 변수를 보관하게 하기 위해서 사용 
+  - Accumulators : 병렬로 효과적으로 제공, 변수들이며 이는 연관된 오퍼레이션들을 통해서 추가 
