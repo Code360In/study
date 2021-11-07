@@ -121,3 +121,31 @@
     - intersect : 두 개의 DataSet에 모두 속하는 row로만 구성된 DataSet을 생성 
 - Spark SQL JDBC 연동 
   - MySQL(또는 MariaDB)와 스칼라를 연결
+
+# Spark Streamling 
+-  실시간으로 들어오는 데이터를 처리하기 위한 모듈
+-  다양한 소스로부터 실시간 스트리밍 데이터 처리
+-  ![image](https://user-images.githubusercontent.com/47103479/140648845-01175fcd-eca5-4fde-93ff-7b61489c465a.png)
+
+- 배치 처리 : 데이터를 축적하다가 일정 주기마다 일괄적으로 처리하는 방식
+  - Spark Streaming의 전체적인 흐름은 리시버가 데이터를 입력 받은 후 마이크로 배치라 불리는 기법으로 데이터를 연산한 뒤 트랜스포메이션을 통해 데이터를 전송
+  - ![image](https://user-images.githubusercontent.com/47103479/140648904-ef4543eb-5161-4d83-8324-e7cf903ab175.png)
+  - ![image](https://user-images.githubusercontent.com/47103479/140649010-c1801fcf-643c-4c67-8649-335b8ccdcadc.png)
+
+- DStream(Discretized Streams) 
+  - 불연속적인 스트림을 의미
+  - 끊임없이 생성되는 데이터를 보여주기 위한 추상모델
+  - 스파크 스트리밍은 입력받은 데이터를 작은 그룹들로 그룹핑
+  - 새로운 배치들은 정해진 간격마다 만들어지며, 작동되는 동안 받은 데이터를 계속 추가 
+  - 설정한 배치 주기별로 데이터를 묶어서 하나의 배치 생성(생성된 배치는 하나의 RDD)
+  - 데이터는 연속적으로 입력되므로 RDD 역시 연속적으로 생성되며, 이렇게 순차적으로 생성된 RDD의 흐름이 DStream
+  - ![image](https://user-images.githubusercontent.com/47103479/140649093-4fb57243-fabe-412e-90c5-1f7075a1b824.png)
+
+- Structured Streaming
+  - Spark SQL 엔진 위에 구축된 Stream Processing Framework
+  - Sturctured Steraming은 기존에 Spark APIs(DataFrames, Datasets, SQL) 등의 Structured API를 이용하여 End-to-End Streaming Application을 손쉽게 생성
+  - SparkSession으로 생성되고 처리할 때 중복 데이터를 관리하기 위하여 time stamp를 도입
+  - DStream을 사용하지 않고 새로운 데이터 row 단위로 계속해서 추가
+  - DataFrame을 통해 streaming 으로 들어오는 데이터를 질의하거나 집계하거나 변형하는 작업등이 가능 
+
+# Apache Spark MLlib
