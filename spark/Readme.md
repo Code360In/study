@@ -85,3 +85,39 @@
 - Shared Variables(공유 변수) : 함수가 Spark오퍼레이션에 전달되면(map 혹은 리듀스) 원격자의 클러스터 노드에서 수행 
   - Broadcast Variables : 각 노드에 캐싱된 읽기전용 변수를 보관하게 하기 위해서 사용 
   - Accumulators : 병렬로 효과적으로 제공, 변수들이며 이는 연관된 오퍼레이션들을 통해서 추가 
+
+# SparkSQL
+- 스파크의 기본 데이터 모델은 RDD
+  - 장점 : 분산환경에서 메모리 기반으로 빠르고 안정적으로 동작하는 프로그램을 작성
+  - 단점 : 스키마에 대한 푠현 방법이 없다
+- 스파크 SQL 주요 기능
+  - DataFrame 추상화 클래스 제공
+  - 다양한 구조적 데이터 포맷의 읽기 및 쓰기 가능(JSON, Hive, Parquet 등)
+  - 내부 JDBC/ODBC나 외부 Tableau(태블루) 같은 BI 툴 등으로 스파크 SQL을 통해 SQL로 데이터 질의 가능
+  - 데이터셋으로부터 조건에 맞는 데이터추출하기
+  - JSON의 키와 테이블의 컬럼 등, 특정한 이름으로 데이터 추출하기
+  - 복수의 데이터셋 결합
+  - 그룹 단위로 집약
+  - 다른 형식의 구조화된 데이터셋으로 변환하기
+- SchemaRDD
+  - Row 객체의 RDD
+  - 각 아이템은 Record를 의미
+  - RDD에서 제공하지 않는 Operation도 제공 
+- DataFrame
+- DataSet
+  - DataFrame은 Dataset[Row]로 간주, Dataset의 subset이며, Row는 유형이 지정되지 않는 JVM 객체 
+  - 필요한 이유: DataFrame과 RDD간의 데이터 타입을 다루는 방식의 차이 
+  - 기본 연산 : 데이터 저장 옵션 조정 및 스키마 조회 
+    - createOrReplaceTempView(viewName:String)  : Unit-viewName 이름으로 로컬 임시 view
+    - explain(): Unit- 디버깅 목적으로 실행계획을 출력
+  - 액션 연산
+    - show() - DataSet의 정보를 표 형태로 표시
+    - head() - 첫 번째 row 로드
+    - take(n:Int): Array[T] - DataSet에서 n개의 row를 로드 
+  - 트랜스포메이션 연산
+    - select() : DataFrame 지정된 컬럼들을 가져옴
+    - filter - SQL 표현식 또는 row 조건으로 데이터 필터링
+    - agg : 특정 컬럼에 대해 sum(), max()와 같은 집합 연산을 수행
+    - intersect : 두 개의 DataSet에 모두 속하는 row로만 구성된 DataSet을 생성 
+- Spark SQL JDBC 연동 
+  - MySQL(또는 MariaDB)와 스칼라를 연결
