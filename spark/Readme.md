@@ -149,3 +149,30 @@
   - DataFrame을 통해 streaming 으로 들어오는 데이터를 질의하거나 집계하거나 변형하는 작업등이 가능 
 
 # Apache Spark MLlib
+- SparkMLlib
+  - SparkMLlib 패키즈는 RDD 기반의 머신 러닝을 지원하는 패키지
+  - SparkSQL로부터 생성된 SchemaRDD를 다양한 데이터 타입을 사용할 수 있는 데이터 셋으로 사용 
+  - 데이터셋은 텍스트, 특성 벡터, 실제 레이블, 예측을 저장하는 다양한 컬럼 보유 
+  - Transformer(변환자) : 하나의 SchemaRDD에서 다른 SchemaRDD로 변환시킬 수 있는 알고리즘 
+  - SchemaRDD는 Row object의 RDD로써 관련 스키마를 보유하며 기본 RDD의 함수뿐만 아니라 relational queries에서 사용 
+  - Estimator(추정자) : SchemaRDD를 가지고 Transformer를 생성하는 fit() 메소드를 실행하는 알고리즘 
+    - 주어진 데이터셋을 학습해 변환자를 생성
+    - 관찰된 데이터들에 대해 예측이나 분류를 수행하는데 필요한 통계 모델
+    - Estimator의 결과는 학습된 선형 회귀 모델(변환자)이라고 할 수 있음 
+  - Evaluator(평가자) : 모델 성능을 단일 지표로 평가 , RMSE~
+  ![image](https://user-images.githubusercontent.com/47103479/141123778-3d1af4ed-29d1-4c1d-a27d-86e4ab83f902.png)
+  ![image](https://user-images.githubusercontent.com/47103479/141123075-68e0f530-51fa-46fb-bf3b-e49038a8cf92.png)
+  
+  - 추출(Extraction) : 원형 데이터에서 특성 추출
+  - 변환(Transformation) : 특성 크기 조정, 변환 또는 수정
+  - 선택(Selection) : 더 큰 특성 집합에서 부분 집합 선택
+  - LSH(Locality Sensitive Hashing) : 특성 변환과 다른 알고리즘을 결합
+  
+- Spark ML
+  - SparkML 패키지는 DataFrame 기반의 머신러닝을 지원하는 패키지 
+    - DataFrame이 RDD보다 Spark에서의 데이터 로딩, 실행 계획 최적화, 언어 간의 API 통일성에 장점 
+    - 분류, 회귀, 클러스터링, 협업 필터링 같은 일반적인 머신러닝 알고리즘 지원
+    - 특성 추출, 변형, 차원 감소 및 선택을 위한 도구, ML 파이프라인 구축과 평가, 튜닝을 위한 도구 제공 
+    - 목표 
+      - 사용자가 실용적인 머신러닝 파이프라인을 만들고 수정하는데 도움이 되는 고수준 API의 균일한 집합을 제공
+      - 모든 데이터가 RDD로 표현된분산 데이터세트에서 다양한 알고리즘을 가져다 쓸 수 있도록 하는것 
