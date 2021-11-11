@@ -195,3 +195,19 @@
   - 이상 탐지
   - 텍스트 분류 또는 주제 인식
   - 검색 결과 그루핑 
+
+# Apache Spark ML 어플리케이션 실습
+- Spark 머신러닝 추천 시스템 
+  - ALS(Alternating Least Squares) 활용
+    - 사용자별 영화 평점 예측 모델(추천 시스템) 만들기
+    - 추천 알고리즘인 Collaborative Filtering(협업필터링)의 세부 알고리즘인 Latent Factor Model을 사용해 Implicit Dataset의 모델을 만들 때 Latent Factor 행렬을 학습시키는 방법 중 하나
+    - 추천 알고리즘 : 넷플릭스 영화추천, 온라인 쇼핑 추천 아이템 등 데이터를 통해서 사용자가 아직 소비하지 않은 아이템 중 선호할 만한 것을 예측하는것 
+      - Contents Based Filtering  사용자 혹은 아이템에 대한 프로필 데이터를 가지고 내가 좋아했던 아이템과 비슷한 유형의 아이템을 추천하거나(item-based recommendation) 나와 비슷한 유형의 사람이 좋아하는 아이템을 추천 (user-based recommendation)
+      - Collaborative Filtering : 프로필 데이터 없이, 사용자의 과거 행동 데이터만을 바탕으로 나와 취향이 비슷한 사람이 선호하는 아이템을 추천 
+    - ALS(Alternating Least Squares) : 특성을 찾아내기 위한 학습 방법으로 사용자와 아이템의 Latent Factor를 한번씩 번갈아 가며 학습 
+  - Dataset
+    - Explict Dataset : 선호와 비선호를 명확하게 구분해 준 Dataset
+    - Implicit Dataset : 선호와 비선호의 구분 없이 행동의 빈도수(ex: 보기, 클릭, 구매, 좋아함, 공유 등)만 기록한 Dataset
+      - Neighborhood model : 주어진 평점 데이터를 가지고 서로 비슷한 유저 혹은 아이템을 찾고 이를 기반으로 추천 진행
+      - Latent Factor model : 관찰된 데이터와 잠재되어 있는 데이터를 연결시키는 기법, 주어진 평점 데이터로 아직 알지 못하는 사용자와 아이템의 특성을 찾아냄 
+           
