@@ -176,3 +176,22 @@
     - 목표 
       - 사용자가 실용적인 머신러닝 파이프라인을 만들고 수정하는데 도움이 되는 고수준 API의 균일한 집합을 제공
       - 모든 데이터가 RDD로 표현된분산 데이터세트에서 다양한 알고리즘을 가져다 쓸 수 있도록 하는것 
+
+- 스파크 ML 패키지
+  - 최상단 레벨에서 3 개의 추상 클래스
+    - Transformer : 하나의 DataFrame을 다른 DataFrame으로 변환하는 알고리즘
+    - Estimator : Transformer를 생성하기 위해 DataFrame에 적용할 수 있는 알고리즘으로 예측을 얻기 위해 데이터를 변환 할 수 있는 모델을 학습
+    - Pipeline : 여러 개의 Transformer와 Estimator를 함께 연결하여 ML 워크 플로를 지정
+   - Spark ML Pipeline workflow
+   ![image](https://user-images.githubusercontent.com/47103479/141302484-39aaf8da-6d11-478b-b948-c60f0f0e0641.png)
+
+- 스파크 ML Pipeline은 일련의 Transformer와 Estimator 객체를 나타내며, 이러한 일련의 객체를 하나의 입력 SchemaRDD에 순차적으로 적용하여 하나의 Model을 출력 
+- 스파크 ML에서의 파이프라인은 End-to-End 변환-추정 과정에 대한 개념 
+- 본 데이터를 받아서(DataFrame) 필요한 데이터 변형을 수행한 후(Transformation), 최종적으로 통계 모델을(Estimator) 생성 
+- 군집화
+  - 모든 데이터에 레이블을 부여하기 힘들거나 군집을 사전에 알 수 없는 경우 등 다양한 경우에 사용
+  - 데이터를 여러 그룹으로 분할
+  - 이미지 세분화
+  - 이상 탐지
+  - 텍스트 분류 또는 주제 인식
+  - 검색 결과 그루핑 
