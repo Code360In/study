@@ -211,3 +211,16 @@
       - Neighborhood model : 주어진 평점 데이터를 가지고 서로 비슷한 유저 혹은 아이템을 찾고 이를 기반으로 추천 진행
       - Latent Factor model : 관찰된 데이터와 잠재되어 있는 데이터를 연결시키는 기법, 주어진 평점 데이터로 아직 알지 못하는 사용자와 아이템의 특성을 찾아냄 
            
+# Apache Spark와 ELK 연동 분석
+- ELK stack
+  - 사용자가 서버로부터 원하는 모든 데이터를 가져와서 실시간으로 해당 데이터에 대한 검색, 분석 및 시각화를 도와주는 Elastic 제품
+  - Elasticsearch는 검색 및 분석 엔진
+  - Logstash는 여러 소스에서 동시에 데이터를 수집하여 변환 후 Elasticsearch 같은 stash로 전송하는 서버 사이드 데이터 처리 파이프라인
+  - Kibana는 사용자가 Elasticsearch에서 차트와 그래프를 이용해 데이터를 시가고하
+  - Beats는 경량의 단일 목적 데이터 수집기 
+  ![image](https://user-images.githubusercontent.com/47103479/141605826-180c0dc1-7982-4f10-b184-20910db2de64.png)
+  - Elasticsearch Spark 커넥터를 사용하여 사용자 이벤트 데이터를 Elasticsearch에 수집하고 인덱싱
+  - 이벤트 데이터를 Spark DataFrame에 로드하고 Spark의 Machine Learning Library(MLib)를 사용하여 협업 필터링 추천자 모델을 학습
+  - 훈련된 모델을 Elasticsearch로 전송
+  - 사용자 정의 Elasticsearch 플러그인을 사용하여 개인화 된 사용자 및 유사한 항목 추천을 계산하고 추천 영화를 검색 및 컨텐츠 필터링과 결합 
+  - 
