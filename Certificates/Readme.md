@@ -9,6 +9,7 @@
 
 # 인프런
 ![image](https://user-images.githubusercontent.com/47103479/136217037-1f20cc63-50dc-402d-86a4-81856a585ee2.png)
+![image](https://user-images.githubusercontent.com/47103479/142766914-6f746100-1224-40ff-b52c-7da33dc2ce70.png)
 
 # T아카데미
 ![image](https://user-images.githubusercontent.com/47103479/136701444-7c32efeb-9cd3-4350-bb77-406843614f84.png)
@@ -19,3 +20,4 @@
 # Tableau
 ![image](https://user-images.githubusercontent.com/47103479/140598896-52215369-c431-406c-aa60-6e4dd70df587.png)
 ![image](https://user-images.githubusercontent.com/47103479/140598871-2b3ac558-ff3e-49f7-bc0a-e4c160fd9ec4.png)
+
