@@ -2,6 +2,16 @@
 - LegacySQL : 과거에 주로 사용하던 문법
 - StandardSQL : 최근에 주로 사용하는 문법, BigQuery 표준
 
+# Apache Airflow
+- Apache Airflow의 Managed Service인 Google Cloud Platform의 Composer
+- 반복되는 작업 Flow를 쉽게 Control 하기 위한 도구 
+- 주기적인 crontab 작업을 반복할 수 있음
+- 연속적으로 이어지는 Task들을 연결할 수 있음
+- UI제공됨
+- Tree View
+  - 연속된 작업이 어디까지 진행되었는지 알 수 있음 
+  - code 부분에서 파일 내용 확인 가능 
+
 ## 시간 데이터 
 ![image](https://user-images.githubusercontent.com/47103479/143035608-41945bec-907b-447b-89a2-ae4d7391887f.png)
 ![image](https://user-images.githubusercontent.com/47103479/143035642-22a7ac4f-95a7-4ace-9a93-55ee3cccad19.png)
