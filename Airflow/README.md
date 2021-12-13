@@ -28,6 +28,7 @@
 
 # code
 ```shell
-ssh remote 설치
-F1 >> remote-ssh >> Connect to host and choose localhost >>  ssh -p 2222 airflow@localhost >>  들어가서 Linux 선택 >>  password airflow >> SSH:localhost 연결 
+- ssh remote 설치
+- vscode terminal : ssh -p 2222 airflow@localhost 입력 후 password airflow입력
+- F1 >> remote-ssh >> Connect to host and choose localhost >>  ssh -p 2222 airflow@localhost >>  들어가서 Linux 선택 >>  password airflow >> SSH:localhost 연결 
 ```  
