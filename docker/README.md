@@ -71,4 +71,64 @@
 
   ![image](https://user-images.githubusercontent.com/47103479/145211529-bc8662bf-b1db-4b39-87d3-5ae4e0c68bed.png)
 
+# Docker 환경 이해
+- Docker Hub : 도커에서 제공하는 기본 이미지 저장소
+  - 회원가입만 하면 대용량의 이미지를 무료로 저장할 수 있고 다운로드 트래픽 또한 무료   
+![image](https://user-images.githubusercontent.com/47103479/145816826-31ab34ab-402f-42cd-96ed-6b2ad402d16f.png)
   
+  - maven repository와 같이 외부에 공개되어 있는 도커 이미지 레포지토리로 docker pull 명령을 이용하여 컨테이너를 로컬에 받아 오거나, Docker image 빌드 시 베이스 이미지 등을 받아오는데 주로 사용됨
+  - ![image](https://user-images.githubusercontent.com/47103479/145817063-793107fb-6091-40c5-9d19-585cea9f9491.png)
+
+- Docker Registry
+![image](https://user-images.githubusercontent.com/47103479/145817675-e0375e7a-6f1d-4d9c-860b-00e6a4183614.png)
+ 
+  - 도커 허브를 이용하면 Registry 구축 없이 도커 이미지를 저장 배포할 수 있음 -> 비공개적으로 사용되거나, 사설 네트워크 등에서 사용되기 위해서는 내부 서버에 도커 Registry를 구축해야함 
+- Docker 사설 Registry 구축  
+  - Docker Registry 구축
+    - 도커 Registry 또한 도커 이미지로 배포되고 있음
+  - Registry 이미지 다운로드
+    - docker pull registry 
+  - Registry 컨테이너 생성
+    - docker run -d -p 5000:5000--restart=always --name registry registry
+  - 도커 이미지 저장하기
+    - 도커 이미지를 태깅하고 Registry에 추가한다
+    - docker pull ubuntu
+    - docker image tag ubuntu localhost:5000/myfirstimage
+  - 도커 이미지 배포
+    - docker pull localhost:5000/myfirstimage
+  - Dokcer Registry 삭제
+    - 실행중인 Registry를 종료하고, 컨테이너를 삭제하게 됨
+    - docker container stop registry && docker container rm -v registry
+
+- 도커 서비스 환경
+  - docker-compose : 여러 도커 컨테이너를 통합적으로 관리하는 CLI 프로그램으로 docker를 설치하면 번들로써 제공
+  - 컨테이너 기반을 이용하여 단순한 저장공간 컨테이너(볼륨)을 만들어 저장공간을 컨테이너끼리 연결할 수 있으며, 실행한 호스트의 저장공간에도 접근 가능함 
+  - Docker는 게스트 OS를 설치하지 않음 -> 호스트와 OS자원을 직접 사용
+  - 도커 프로그램에서 다양한 API를 제공하기 때문에 원하는 만큼 자동화가 가능함
+  ![image](https://user-images.githubusercontent.com/47103479/145819027-553a9db4-8c58-4d2e-aaab-299593636729.png)
+
+  - 확장성
+    - 이미지만 만들어 놓으면 컨테이너만 관리
+    - 서비스 이전이나 신규 서버에 서비스 추가 시 docker run 명령어로 처리
+    - 개발서버나 테스트서버 운용 간편 
+  - 표준성 
+    - 도커를 사용하지 않는 경우 ruby, node.js,go,php로 만든 서비스들의 배포방식은 제각각
+    - 컨테이너라는 표준으로 서버를 배포하므로 모든 서비스들의 배포과정이 동일 
+  - 이미지
+    - 이미지에서 컨테이너를 생성하기 때문에 반드시 이미지를 만드는 과정이 필요
+    - 이미지를 저장할 곳이 필요 
+  - 설정
+    - MySQL_PASS =password와 같이 컨테이너를 띄울 때 환경변수를 같이 지정 
+    - 하나의 이미지가 환경변수에 따라 동적으로 설정파일을 생성핟로록 만듬
+  - 공유자원
+    - 컨테이너는 삭제 후 새로 만들면 모든 데이터가 초기화됨
+    - 업로드 파일을 외부 스토지와 링크하여 사용하거나 S3같은 별도의 저장소 필요
+    - 세션이나 캐시를 파일로 사용 시 memcached나 redis와 같은 외부로 분리 
+
+- 서비스 빌드 및 배포
+![image](https://user-images.githubusercontent.com/47103479/145820565-a0a3b78f-4d95-4ecf-b95e-cc63eb26ae7e.png)
+![image](https://user-images.githubusercontent.com/47103479/145819926-8fdb86f6-f163-4b4a-9db4-2e32b9934898.png)
+![image](https://user-images.githubusercontent.com/47103479/145820062-d0a0adcd-4ee9-4324-8bb3-ec78d0170224.png)
+![image](https://user-images.githubusercontent.com/47103479/145820259-bad0b418-93e1-4def-a8e5-04ac1143943e.png)
+
+
