@@ -131,4 +131,38 @@
 ![image](https://user-images.githubusercontent.com/47103479/145820062-d0a0adcd-4ee9-4324-8bb3-ec78d0170224.png)
 ![image](https://user-images.githubusercontent.com/47103479/145820259-bad0b418-93e1-4def-a8e5-04ac1143943e.png)
 
+# Docker 볼륨과 네트워킹
+- Docker 볼륨과 데이터 관리
+  - 도커는 데이터를 안전하게 존속시킬 수 이쓴 방식으로 volume, bind mounts, tmpfs의 3가지 방식을 제공함
+    - 3가지 방식간의 가장 큰 차이점은 데이터가 Doker Host내에서 어디에 존재하느냐의 차이 
+  ![image](https://user-images.githubusercontent.com/47103479/146002564-3e7211f4-bcc0-47e1-8c7a-5a8aa7941ba0.png)
+  
+  - 도커의 이미지로 컨테이너를 생성하면 읽기 전용이라 쓰기가 불가능
+  ![image](https://user-images.githubusercontent.com/47103479/146002828-42a4a574-f41e-426f-88f7-cccc0d88cbdf.png)
+
+- 볼륨
+  - 도커 컨테이너에 의해 생성되고 사용되는 데이터를 영속하기 위해 선호되는 메커니즘
+  - 바인드 마운트는 호스트 머신의 디렉토리 구조에 따라 달라지지만, 볼륨은 도커에 의해 완전히 관리됨
+  ![image](https://user-images.githubusercontent.com/47103479/146003476-10526df0-f612-4000-a440-b3be8f53e4d7.png)
+
+- bind mount
+  - 도커 초기부터 사용할 수 있었던 방식으로 volume에 비해 기능이 제한적임
+  - Host System의 파일 또는 디렉토리가 Container에 Mount됨
+  - 매우 효과적이지만 Host Machine의 File System 디렉토리 구조에 의존적임
+  - Docker CLI 명령어로 bind mount를 관리할 수 없음 
+- tmpfs mount
+  - Docker Host 또는 Container내의 디스크 Data가 유지되지 않음
+  - 비영구적인 상태 정보나 민감 정보와 같이 Container의 생명주기와 맞춰서 Data를 보존하고자 할 때 사용할 수 있음 
+
+- Docker Network 구조   
+![image](https://user-images.githubusercontent.com/47103479/146005583-c2081f13-15bc-4ddf-a357-8b06a3d042ed.png)
+
+  - 리눅스 시스템 기반, 컨테이너는 기본적으로 eth0와 Io 네트워크 인터페이스를 가지고 있음
+  - 컨테이너 내부 IP를 순차적으로 할당을 하며 컨테이너가 재시작될때마다 변경될 수 있음
+  - 외부와 연결을 해야 할 경우에는 호스트에 veth(=virtual eth)라는 네트워크 인터페이스를 생성하고 컨테이너의 eth와 연결됨
+    - veth 인터페이스는 사용자가 직접 생성할 필요 없이 도커엔진에 의해 자동으로 생성됨 
+  - Docker의 5가지 네트워크 구현 방식
+  ![image](https://user-images.githubusercontent.com/47103479/146006437-eebe2d98-d5bd-452b-b537-aced1635e51b.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146006964-0d7bb0f8-18c8-45dd-a3ed-e6b37d697025.png)
+
 
