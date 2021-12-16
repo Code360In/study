@@ -165,4 +165,57 @@
   ![image](https://user-images.githubusercontent.com/47103479/146006437-eebe2d98-d5bd-452b-b537-aced1635e51b.png)
   ![image](https://user-images.githubusercontent.com/47103479/146006964-0d7bb0f8-18c8-45dd-a3ed-e6b37d697025.png)
 
+# Docker 서비스
+- Docker Compose
+  - 한번에 여러 개의 container를 통합 관리 및 운용하기 위한 도구
+  - 멀티 컨테이너의 동시 운용 시 컨테이너별 별도의 설정들을 간편하게 작업 가능
+  - 기본 수행 절차
+    ![image](https://user-images.githubusercontent.com/47103479/146376869-8b63c7f1-c3a8-4dd2-a36b-898d087879a0.png)
+    
+  - 활용
+    - 단일 호스트상, 다수의 독립 환경 운용
+    - 컴테이너 볼륨의 보존
+    - 변경된 컨테이너의 재생성
+    - Variables and moving a composition between environments 
+  ![image](https://user-images.githubusercontent.com/47103479/146380206-aa3f70f4-3bb4-42de-bb03-ef00e901d42c.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146380553-8d11ace1-308c-45ce-8ad5-b3bb70041c8e.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146381136-1969b417-d7e6-430b-b1cf-42e975eb0afb.png) 
 
+  - 여러 개의 컨테이너 옵션과 환경을 정의한 파일을 읽어 컨테이너를 순차적으로 생성함
+  - Docker Compose의 설정 파일(docker-compose.yml)은 run 명령어 옵션을 그대로 사용할 수 있으며 컨테이너의 의존성, 네트워크, 볼륨, 컨테이너 수 등을 유동적으로 조절할 수 있음
+    ![image](https://user-images.githubusercontent.com/47103479/146381699-147ff541-9a83-4d15-b8a2-3938dce1bc9a.png)
+ 
+    - 파이썬 프로그램이 구동되는 컨테이너와 데이터를 저장하는 redis 서버, 웹서버 컨테이너를 실행한다고 할 때, 각각의 run 명령어 및 다양한 옵션으로 컨테이너를 생성하고 테스트하기에는 매우 번거로움 -> Docker Compose를 활용하면 편리함 
+  ![image](https://user-images.githubusercontent.com/47103479/146381964-cd50bdaf-00cb-4267-9f90-71946092b7db.png)
+  
+  - docker-compose.yml 파일 구조    
+    - 기타 command, links, external_links, extra_hosts, prots, expose, volumes 등
+    ![image](https://user-images.githubusercontent.com/47103479/146382528-42f03a70-d7f2-474d-9fcc-e116434d46da.png)
+
+- Docker Swarm
+  - 도커가 공식적으로 만든 오케스트레이션 도구
+    - 오케스트레이션 도구 : 여러 호스트 서버의 컨테이너들을 배포 및 관리를 위한 도구
+    - 쿠버네티스를 대신할 도커에서 만든 컨테이너 관리를 위한 툴 
+  - 여러 개의 도커 호스트를 함께 클러스팅하여 단일 가상 Docker 호스트 생성
+  - 호스트 OS에 Agent만 설치하면 간단하게 작동하고 설정이 쉽고 Agent를 외부에 설치하지 않음
+  - 컨테이너 오케스트레이션 도구 : Docker Swarm, APACHE MESOS, KUBERNETES 등
+  - 오케스트레이션 도구 기능
+    - 컨테이너 배포
+    - 컨테이너 자동 배치
+    - 컨테이너 자동 복제
+    - 컨테이너 그룹에 대한 로드밸런싱
+    - 컨테이너 장애 복구
+    - 클러스터 외부에 서비스 노출
+    - 컨테이너 추가 또는 제거를 이요한 확장 및 축소
+    - 컨테이너 서비스간의 인터페이스를 통한 연결 및 네트워크 포트 노출 제어 
+  - 시스템 구조
+    - Master 노드와 Worker 노드로 시스템을 구성
+    - Master 노드에서는 클러스터 관리 작업을 하고 클러스터 상태 유지, 스케줄링 서비스 , Swarm HTTP API Endpoint를 제공
+    - Worker 노드는 컨테이너를 실행하는 역할
+    ![image](https://user-images.githubusercontent.com/47103479/146383286-3cc3c4df-9713-4401-a02f-54fc46c4ef13.png)
+  
+  - Swarm 클러스터 구축
+  ![image](https://user-images.githubusercontent.com/47103479/146383374-629ef432-017a-4a79-9af5-1e7c79bea7a4.png)
+
+  - Swarm을 통한 어플리케이션 배포
+  ![image](https://user-images.githubusercontent.com/47103479/146383508-eb76b9ba-c2dd-4edb-bbee-fe456ffe0c30.png)
