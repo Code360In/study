@@ -219,3 +219,47 @@
 
   - Swarm을 통한 어플리케이션 배포
   ![image](https://user-images.githubusercontent.com/47103479/146383508-eb76b9ba-c2dd-4edb-bbee-fe456ffe0c30.png)
+
+## Kubernetes(K8s)
+- 컨테이너화된 워크로드와 서비스를 관리하기 위한 이식성이 있고, 확장 가능한 오픈소스 플랫폼
+- 선언적 구성과 자동화를 모두 용이하게 해줌
+- 구글의 15여 년에 걸친 대규모 상용 워크 로드 운영 경험을 기반으로 만들어졌으며 커뮤니티의 최고의 아이디어와 적용 사례가 결합
+- 분산시스템을 탄력적으로 실행하기 위한 프레임 워크를 제공함
+- 확장 요구 사항, 장애 조치, 배포 패턴 등을 처리함
+- Rancher 2.0, OpenShift(Red Hat), Tectonic(CoreOS), Docker Enterprise Edition 등이 쿠버네티스를 기반으로 플랫폼으로 만들어 대세임을 증명하고 있고 AWS, Google Cloud, Azure, Digtial Ocean, IBM Cloud, Oracle Cloud 등에서 관리형(Managed) 서비스를 내놓음으로써 클라우드 컨테이너 시장을 평정 
+![image](https://user-images.githubusercontent.com/47103479/146551884-1ed83b38-66fb-450c-8f6b-7b2637a4a373.png)
+![image](https://user-images.githubusercontent.com/47103479/146552673-25e4c1a8-396a-420b-bfe8-405c1e40ca66.png)
+![image](https://user-images.githubusercontent.com/47103479/146552421-52e36b86-8563-429d-93b8-5c4d2187cc66.png)
+![image](https://user-images.githubusercontent.com/47103479/146552544-2c2d8058-82e8-463d-bf9f-e40f7bd162c1.png)
+
+- 쿠버네티스 커뮤니티와 생태계
+![image](https://user-images.githubusercontent.com/47103479/146552719-f4fa3aa2-9437-4c40-b419-0df085f590fb.png)
+
+- 다양한 배포 방식
+  ![image](https://user-images.githubusercontent.com/47103479/146554079-56176d29-d0fd-40ca-9f06-ec8f1f02b099.png)
+ 
+  - 쿠버네티스는 Deployment, StatefulSets, DaemonSet, Job, CronJob등 다양한 배포 방식을 지원 
+    - Deployment : 새로운 버전의 애플리케이션을 다양한 전략으로 무중단 배포 가능
+    - StatefulSets : 실행 순서를 보장하고 호스트 이름과 볼륨을 일정하게 사용할 수 있어 순서나 데이터가 중요한 경우에 사용 가능
+    - DaemonSet : 로그나 모니터링 등 모든 노드에 설치가 필요한 경우에 이용
+    - Job, CronJob :  배치성 작업 
+
+- 클라우드 지원
+![image](https://user-images.githubusercontent.com/47103479/146553230-dc94323f-f561-432b-b24e-ba01b635c861.png)
+
+  - 쿠버네티스는 부하에 따라 자동으로 서버를 늘리는 기능(AutoScaling)이 있고 IP를 할당받아 로드밸런스(LoadBalancer)로 사용가능하며 외부 스토리지를 컨테이너 내부 디렉토리에 마운트하여 사용하는 것도 가능
+  - 쿠버네티스는 Cloud Controller를 이용하여 클라우드 연동을 손쉽게 확장할 수 있음
+  - 수십 개의 클라우드 업체에서 모듈을 제공하여 관리자는 동일한 설정 파일을 서로 다른 클라우드에서 동일하게 사용 가능함 
+
+- 아키텍쳐
+![image](https://user-images.githubusercontent.com/47103479/146553458-b1379fc7-2a33-4e4a-a448-3d4700d7fc3b.png)
+![image](https://user-images.githubusercontent.com/47103479/146553683-2e167506-6981-47bd-82c3-09558eaca75d.png)
+![image](https://user-images.githubusercontent.com/47103479/146553860-06f63db4-8eae-4ef5-807c-d5317dfa21d4.png)
+
+## Jenkins
+![image](https://user-images.githubusercontent.com/47103479/146554285-b18a6ec3-75d7-4f32-9e68-b5b62f6c4f2f.png)
+![image](https://user-images.githubusercontent.com/47103479/146554477-7508b955-d909-4a64-8d65-9c2ef159063a.png)
+![image](https://user-images.githubusercontent.com/47103479/146554693-cee94a71-b283-4cb7-92c7-f41ce6b867e9.png)
+![image](https://user-images.githubusercontent.com/47103479/146555123-bd7fee9c-de16-46a0-adcb-024a932b52aa.png)
+
+
