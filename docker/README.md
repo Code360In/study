@@ -262,4 +262,58 @@
 ![image](https://user-images.githubusercontent.com/47103479/146554693-cee94a71-b283-4cb7-92c7-f41ce6b867e9.png)
 ![image](https://user-images.githubusercontent.com/47103479/146555123-bd7fee9c-de16-46a0-adcb-024a932b52aa.png)
 
+# 도커모티너링
+- ELK(ElasticSearch, Logstash, Kibana) Stack
+![image](https://user-images.githubusercontent.com/47103479/146641301-616a2179-8961-4a99-9ad1-ccc6e293e916.png)
+   
+   - 분석 및 저장 기능을 담당하는 ElasticSearch
+   - 수집 기능을 하는 Logstash
+   - 시각화 하는 도구인 Kibana
+   - ELK는 접근성과 용이성이 좋아 최근 가장 핫한 Log 및 데이터 분석 도구
 
+## ElasticSearch
+![image](https://user-images.githubusercontent.com/47103479/146641361-79753403-72d2-4f3d-be54-6f8f71f02602.png)
+
+  - Lucene 기반으로 개발한 분산 검색엔진
+  - JSON 기반의 분산형 검색 및 분석 엔진
+  - Logstash를 통해 수신된 데이터를 저장소에 저장하는 역할
+  - 데이터를 중심부에 저장하여 예상되는 항목을 검색하고 예상치 못한 항목 검출 가능
+  - 정형, 비정형, 위치정보, 메트릭 등 원하는 방법으로 다양한 유형의 검색을 수행하고 결합 가능 
+  - 데이터를 중심부에 저장하여 예상되는 항목을 검색하고 예상치 못한 항목 검출 
+  ![image](https://user-images.githubusercontent.com/47103479/146641434-34bddb23-f603-438f-b018-4bf376a60152.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146641567-190dc2b4-bd23-4afe-a63e-85c09db13801.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146641595-e47c7004-3088-4646-a462-4ad9c5d18172.png)
+
+## Logstash
+- 확장형 플러그인 에코시스템으로 구성된 동적 데이터 수집 파이프라인
+- 오픈소스 서버 기반 데이터 처리 파이프라인
+- 다양한 데이터 소스에서 동시에 데이터를 수집하고 변환하여 stash 보관소 전달
+- 수집할 로그를 선정해서, 지정된 대상 서버(ElasticSearch)에 인덱싱하여 전송하는 역할을 담당하는 소프트웨어
+![image](https://user-images.githubusercontent.com/47103479/146641708-af970226-fe89-4727-9a66-1a819f7666d7.png)
+
+- filter : Logstash 파이프라인의 중간 처리 장치
+![image](https://user-images.githubusercontent.com/47103479/146641763-a9244e1f-45ec-470b-bb14-592766651a74.png)
+
+- output : Logstash파이프 라인의 최종 단계
+![image](https://user-images.githubusercontent.com/47103479/146641828-d328276a-b1f1-48f4-a6d8-41938398bd47.png)
+
+- codec
+  - 입력 또는 출력의 일부로 작동 할 수 있는 스트림 필터
+  - 인기 코덱에는 json, msgpack, plain
+
+## Kibana
+![image](https://user-images.githubusercontent.com/47103479/146641915-537e824e-f0da-4dcc-bf96-3bd175b0395e.png)
+
+- 확장형 사용자 인터페이스, 데이터를 구체적으로 시각화
+- 데이터를 시각적으로 탐색하고 실시간으로 분석 가능(ElasticSearch)
+- 시각화를 담당하는 HTML + Javascript 엔진
+
+## Docker ELK
+- Docker 설치
+![image](https://user-images.githubusercontent.com/47103479/146642264-eea7de85-de5b-418c-a7f0-6a3d6376f1f8.png)
+
+- Docker Compose 설치
+![image](https://user-images.githubusercontent.com/47103479/146642098-83bf55ab-842d-41c0-9975-5f245911aa4b.png)
+
+- docker-elk 레포지토리 클론 
+![image](https://user-images.githubusercontent.com/47103479/146642155-31c4eec7-5d26-433f-b656-ef9d499f03b2.png)
