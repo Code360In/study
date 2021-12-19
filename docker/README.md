@@ -317,3 +317,48 @@
 
 - docker-elk 레포지토리 클론 
 ![image](https://user-images.githubusercontent.com/47103479/146642155-31c4eec7-5d26-433f-b656-ef9d499f03b2.png)
+
+# Docker 오케스트레이션
+## Rancher
+- 멀티 호스트에서 컨테이너를 실행하고 관리하기 위한 오픈소스 소프트웨어 플랫폼
+- Docker와 Kubernetes를 운영하고 관리
+- 컨테이너의 생명주기를 관리하는 기능
+- Rancher하나로 Docker 컨테이너를 관리하는데 필요한 전체 소프트웨어 스택 구출 가능 
+![image](https://user-images.githubusercontent.com/47103479/146676436-ac430d6b-5884-45d7-8dd1-e514a844ecfa.png)
+
+- Rancher 소프트웨어의 네 가지 구성요소
+  - Infra Orchestration
+    - Rancher는 Linux 호스트 형태로 원시 컴퓨팅 리소스를 가져옴
+    - 각 Linux 호스트는 가상 시스템 또는 물리적 시스템이 될 수 있음
+    - Rancher는 각 호스트의 CPU, Memory, Disk Storage, Network Connection 이외에 다른 것들은 예측하지 않음
+    - Rancher관점에서는 VM instacnce인지 bare metal 서버인지 구분하지 않음 
+  - Container Orchestration and scheduling
+    - 컨테이너화된 응용 프로그램을 실행하도록 선택함
+    - Rancher는 Docker Swarm, Kubernetes, Mesos를 포함한 모든 인기 있는 컨테이너 오케스트레이션 프레임워크를 이용해서 컨테이너를 배포함, 이외에도 Cattle이라는 컨테이너 오케스트레이션 및 스케쥴링 프레임워크를 지원함
+    - Rancher는 Swarm, Kubernetes 및 Mesos 클러스터를 설정, 관리 및 업그레이드 하는 게 광범위하게 사용됨
+    - 사용자는 여러 개의 스웜 또는 Kubernetes 클러스터를 만들 수 있으며, 이들 오케스트레이션 프레임워크의 고유기능을 이용해서 응용 프로그램들을 관리 할 수 있음
+  - Application Catalog
+    - Rancher는 실행해야 할 컨테이너의 정보가 담겨 있는 Application Catalog를 관리함
+    - Rancher 사용자는 버튼을 한번 클릭하는 것으로 간단하게 어플리케이션을 실행할 수 있음
+    - 자주 사용하는 어플리케이션을 카탈로그 형태로 등록할 수 도있음
+    - 등록된 어플리케이션은 자동으로 실행되고 업그레드 됨
+    - 이미 다양한 종류의 어플리케이션 카탈로그들이 존재함 
+  - Enterprise-grade control
+    - Active Directory, LDAP, Github 등의 인증시스템 그리고 Rancher에서 제공하는 RBAC(Role-Based Access Control)을 이용해서, 유저와 그룹의 권한을 설정할 수 있음
+
+- 환경 구성 
+  - 3개의 노드 , 두 개 노드에는 Rancher Agent가 설치, 한 노드에는 Rancher Server가 설치 
+  ![image](https://user-images.githubusercontent.com/47103479/146676526-667ce02a-1ac3-4c3f-a04c-0eb29b46884e.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146676566-211867aa-24c3-451d-8f5e-8cb5caf22401.png)
+
+- 설치
+  ![image](https://user-images.githubusercontent.com/47103479/146676672-d1e7c46b-ef1f-4dcc-929d-410a10458eb5.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146676675-719d82b6-2d5b-49c5-98c1-512ff8ffc14e.png)
+
+- 멀티 컨테이너 관리
+![image](https://user-images.githubusercontent.com/47103479/146676766-ad838a1d-a864-46f9-b053-6c27e1d45e5f.png)
+![image](https://user-images.githubusercontent.com/47103479/146676930-2e49dabd-1f17-4695-8135-d7de668155cd.png)
+![image](https://user-images.githubusercontent.com/47103479/146676826-c53dadb5-69eb-44d1-8c2c-4b49c3cd82c1.png)
+![image](https://user-images.githubusercontent.com/47103479/146676840-1fa21b35-1a98-48b6-ab2e-dedf75a354c5.png)
+
+
