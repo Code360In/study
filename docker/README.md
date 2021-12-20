@@ -361,4 +361,53 @@
 ![image](https://user-images.githubusercontent.com/47103479/146676826-c53dadb5-69eb-44d1-8c2c-4b49c3cd82c1.png)
 ![image](https://user-images.githubusercontent.com/47103479/146676840-1fa21b35-1a98-48b6-ab2e-dedf75a354c5.png)
 
+# AWS 기반 Docker 서비스 구축 
+- Docker는 애플리케이션을 신속하게 구축, 테스트 및 배포할 수 있는 소프트웨어 플랫폼
+- Docker는 소프트웨어를 컨테이너라는 표준화된 유닛으로 패키징하여, 이 컨테이너에는 라이브러리, 시스템 도구, 코드 , 런타임 등 소프트웨어를 실행하는 데 필요한 모든 것이 포함 
+- Dokcer를 사용하면 환경에 구애 받지 않고 애플리케이션을 신속하게 배포 및 확장할 수 있으며 코드가 문제없이 실행될 것임을 확신 
+- AWS에서 Docker를 실행하면 개발자와 관리자가 어떠한 규모에서든 매우 안정적이며 저렴한 방식으로 애플리케이션을 구축, 제공 및 실행 가능 
+- AWS에서는 두 가지 Docker 라이선싱 모델, 즉 오픈 소스 Dokcer Community Edition(CE)과 구독 기반의 Docker Enterprise Edition(EE) 둘다 지원 
+
+## Docker 작동 방식
+- Docker는 코드를 실행하는 표준 방식을 제공
+- Docker는 컨테이너를 위한 운영 체제
+- 가상머신이 서버 하드웨어를 가상화하는 방식과 비슷하게(직접 관리해야하는 필요성 제거) 컨테이너는 서버 운영 체제를 가상화
+- Docker는 각 서버에 설치되며 컨테이너를 구축, 시작 또는 중단하는데 사용할 수 있는 간단한 명령을 제공
+- AWS Fargate, Amazon ECS, Amazon EKS 및 AWS Batchn와 같은 AWS 서비스를 사용하면 Docker 컨테이너를 대규모로 실행하고 관리 가능  
+- Docker를 사용해야 하는 이유
+  - Docker를 사용하면 코드를 더 빨리 전달하고, 애플리케이션 운영을 표준화하고, 코드를 원할하게 이동하고, 리소스 사용률을 높여 비용을 절감
+  - Docker를 사용하면 어디서나 안정적으로 실행할 수 있는 단일 객체를 확보
+  - Docker의 간단한 구문을 사용해 완벽하게 제어
+  - 더 많은 소프트웨어를 더 빨리 제공
+  - 운영 표준화 : 작은 커에티너식 애플리케이션을 사용하면 손쉽게 배포하고, 문제를 파악하고, 수정을 위해 롤백
+  - 원활하게 이전 : Docker 기반 애플리케이션을 로컬 개발 시스템에서 AWS의 프로덕션 배포로 원활하게 이전 
+  - Dokcer 컨테이너를 최신 애플리케이션 및 플랫폼을 생성하는 핵심 빌딩 블록으로 사용
+  - Docker에서는 손윕게 분산 마이크로 서비스 아키텍처를 구축 및 실행
+  - 표준화된 지속적 통합 및 지속적 전달 파이프라인을 통해 코드를 배포
+  - 고도로 확장 가능한 데이터 처리 시스템을 구축
+  - 개발자를 위한 완전 관리형 플랫폼을 생성 가능
+  - 서비스로서의 컨테이너 : 안전한 IT 관리형 인프라와 콘텐츠로 분산 애플리케이션을 구축 및 제공 
+
+## AWS에서 Docker 실행
+- AWS는 Docekr 오픈 소스 및 상용 솔루션 모두에 대한 지원을 제공
+- Amazon Elastic Container Service(ECS)는 고도로 확장 가능하고 성능이 뛰어난 컨테이너 관리 서비스
+- AWS Fargate는 인프라를 배포하거나 서버를 프로비저닝하거나 관리하지 않고도 프로덕션에서 컨테이너를 실행할 수 있도록 지원하는 Amazon ECS를 위한 기술
+- Amazon Elastic Container Service for Kubernetes(EKS)를 사용하면 손쉽게 aws에서 Kubernetes를 실행 
+- Amazon Elastic Container Registry(ECR)는 Docker 컨테이너 이미지를 손쉽게 저장하고 관리할 수 있도록 지원하는 안전한 고가용성 프라이빗 컨테이너 레지스트리로서, 빠르게 가져오고 보호하기 위해 저장 이미지를 암호화하고 압축
+- AWS Batch를 사용하면 Docker 컨테이너를 사용하여 고도로 확장 가능한 배치 처리 워크로드를 실행 
+
+## AWS Docker 구축
+- Docker 컨테이너 배포
+  - Amazon Elastic Container Service(ECS)는 확장 가능한 클러스터에서 Docker 애플리케이션을 실행하는 데 사용하는 Amazon Web Services
+  ![image](https://user-images.githubusercontent.com/47103479/146772054-a1d0ca94-6d2d-4f44-82f3-dd3953f082eb.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146772786-25aaaa6b-8e57-4d9c-b720-14e6e27e2b76.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146773047-bf3b04da-7ff1-47d3-9977-2955e6cf4e78.png)
+
+
+
+
+
+
+
+
 
