@@ -403,11 +403,75 @@
   ![image](https://user-images.githubusercontent.com/47103479/146772786-25aaaa6b-8e57-4d9c-b720-14e6e27e2b76.png)
   ![image](https://user-images.githubusercontent.com/47103479/146773047-bf3b04da-7ff1-47d3-9977-2955e6cf4e78.png)
 
+# 구글 클라우드 런 서비스
+## 서버리스 서비스
+- 서버 구축 시 고려 사항
+  - 대용량 서비스에서의 서버 안정성
+  - 관리
+  - 해킹으로부터의 방어
+  - 서버 애플리케이션 유지보수의 신속성
+  ![image](https://user-images.githubusercontent.com/47103479/146930791-3c912ef5-06d3-4ec5-be5d-9047f3230fa3.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146930967-7cb7d1cf-f29a-4747-8a0f-4bb46c98d586.png)
+
+- 대표적인 서버리스아키텍처 제공업체
+  - Amazon : AWS Lambda
+  - Microsoft : Azure Functions
+  - Google : Google Cloud Funtions
+
+- 서비스형 서버리스(Serviceful Serverless)
+  - 서비스형 서버리스는 직접 서버를 구축하고 프로비저닝하고 관리할 필요 없이, 서버의 역할을 서비스 형태로 사용하는것을 의미
+  - 단순히 컴퓨팅 리소스, 스토리지, 네트워크 뿐 아니라 머신 러닝과 모바일 백엔드, 머신 러닝, 블록체인, IoT, 그리고 인공위성 제어 및 데이터베이스와 파일 스토리지, 메시징 서비스도 제공 
+  - 서버리스 애플리케이션 유형
+    - 클라이언트에서 사용자 인터랙션 로직을 대부분 처리
+    - 자주 사용하는 서버 기능은 서버리스형 서비스로 처리
+    - 각종 연계를 위해 사용하는 작은 함수(FaaS)
+    - 클라이언트에서 사용자와 상호작용하는 로직을 대부분을 처리해서 서버의 역할을 줄이고 서버에서 제공하는 기능은 서버리스형 서비스를 적극 활용하고, 각 서비스 간 로직은 FaaS를 이용해 구현 
+  - XaaS 서비스
+  ![image](https://user-images.githubusercontent.com/47103479/146932042-8f006d46-c387-4378-b5c9-6b692234d92c.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146932129-c6dc50cd-5569-4f30-8501-8de2b2f0c98e.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146932231-d3ac5483-71fd-461d-b23b-a48dde75a7c7.png)
 
 
+- FaaS(Functions as a Service)
+  - 함수를 서비스로 제공하는 형태
+  - 함수(코드)를 실행하기 위해 서버를 올리고 런타임을 구성하고 코드를 배포해서 실행해야 하는 일련의 과정을 없애고, 사용자가 원하는 로직을 함수로 작성만 해놓으면(특정 조건 하에) 함수가 실행
+  - 함수가 호출되면 VM(또는 컨테이너)가 실행되고 해당 런타임 내에서 정의해놓은 함수가 실행
+  - 실행 후 VM(또는 컨테이너)는 종료
+  - 서버가 계속 대기하면서 사용자의 요청을 처리하는 것이 아니라, 이벤트가 있을 때마다 실행되는 작은 코드 
+  ![image](https://user-images.githubusercontent.com/47103479/146931631-cb290f96-ea11-4d38-88bb-aec2a299d035.png)
 
+## 구글 클라우드 런
+- 구글 클라우드 넥스트 2019에서 도커 컨테이너를 서버리스 환경에서 운영할 수 있는 클라우드 런 서비스를 발표
+- 클라우드 런은 쿠버네티스 위에서 케이네이티브 기반으로 동작
+- 도커 이미지만 있다면 외부에 노출된 서버 애플리케이션을 손쉽게 실행하는 것이 가능
+- 케이네이티브 기반이기 때문에 구글 클라우드에 종속되지 않고 높은 이식성
+- 클라우드 런의 서비스는 기본적으로 서버 리퀘스트를 가정하고 리퀘스트를 받으면 컨테이너가 실행되고 요청을 처리
+- Cloud Run은 여러 언어(Go, Node.js, Python, 자바 등)를 지원하므로 원하는 프로그래밍 언어와 프레임워크를 자유롭게 사용 
+![image](https://user-images.githubusercontent.com/47103479/146933324-f934759d-3c99-41f5-9801-f6e455c445d7.png)
+![image](https://user-images.githubusercontent.com/47103479/146933473-f5a10e9f-693f-4650-8a4e-18f2ab7cda60.png)
+![image](https://user-images.githubusercontent.com/47103479/146933670-f6744780-381f-41d6-b19d-92c0399adbc5.png)
 
+- gcloud 베타 구성요서 설치
+  - gcloud components install beta
+  - gcloud components update
+  - gcloud config list 
+- 도커 기반 서비스 구축 
+  - 1단계 : 샘플 애플리케이션 작성 
+  - Cloud Run은 다음 샘플에 나와 있는 언어 외에도 많은 다른 언어를 지원 
+  ![image](https://user-images.githubusercontent.com/47103479/146933907-c4967c2c-8bf6-4c26-b030-18abe166b986.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146938576-71d98071-5e59-460f-8182-f90fb99cbc15.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146937600-99eec3ec-5443-4673-b77d-b4bcfb894f1c.png)
 
+  - 2단계 : 앱을 컨테이너화하여 Container Registry에 업로드
+  ![image](https://user-images.githubusercontent.com/47103479/146937728-e6a795c7-eac5-4f55-b220-4c2f54077db5.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146937835-99a68ae9-5454-4b14-9240-dd3c1549ae33.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146937899-04931540-de46-4141-9866-0b105ca6b0b1.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146937954-d13b81a4-c036-4047-86c7-bb686fd9a5d3.png)
 
+  - 3단계 : Cloud Run에 컨테이너 이미지 배포
+  ![image](https://user-images.githubusercontent.com/47103479/146938088-601f0998-22a7-48cf-a532-c6b859123b65.png)
 
-
+  - 4단계 : 컨테이너식 앱으로 호스팅 요청 전달
+  ![image](https://user-images.githubusercontent.com/47103479/146938233-65d7ad51-4e9a-4a52-a7eb-7874267ca789.png)
+  ![image](https://user-images.githubusercontent.com/47103479/146938303-a359d4cc-dbb8-470a-a811-8f9679b02c18.png)
+  
