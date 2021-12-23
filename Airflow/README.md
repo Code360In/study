@@ -32,3 +32,26 @@
 - vscode terminal : ssh -p 2222 airflow@localhost 입력 후 password airflow입력
 - F1 >> remote-ssh >> Connect to host and choose localhost >>  ssh -p 2222 airflow@localhost >>  들어가서 Linux 선택 >>  password airflow >> SSH:localhost 연결 
 ```  
+
+# remote ssh
+- https://gist.github.com/marclamberti/742efaef5b2d94f44666b0aec020be7c#file-airflow-version
+![image](https://user-images.githubusercontent.com/47103479/147244229-61ad9044-fffe-402c-b410-75122c25a2ae.png)
+
+- $ airflow db init 
+  - code ex) airflow db upgrade / airflow db reset 
+![image](https://user-images.githubusercontent.com/47103479/147244857-cade75be-6496-4aa0-bfea-7aa036bacb6b.png)
+
+- $ airflow webserver
+![image](https://user-images.githubusercontent.com/47103479/147245186-57b6a9e9-f9c0-4b6b-9eea-4b5f0b1ece6d.png)
+![image](https://user-images.githubusercontent.com/47103479/147245442-ba5d08ee-ff4f-4664-b4d8-a156723f65dc.png)
+![image](https://user-images.githubusercontent.com/47103479/147245497-073f14f0-eb45-4b6a-873a-9578b2cf2c07.png)
+![image](https://user-images.githubusercontent.com/47103479/147245577-8a4d8ac5-2810-453d-8f9b-7fa6880df52a.png)
+![image](https://user-images.githubusercontent.com/47103479/147245669-2eeef081-15f1-4a45-8bb0-1aee01fdf73a.png)
+![image](https://user-images.githubusercontent.com/47103479/147245857-f91b57a8-f579-481f-9827-6e3eb7e6314a.png)
+
+## new bash
+![image](https://user-images.githubusercontent.com/47103479/147247512-5e9da46b-9c62-412f-ab83-2c94380541d8.png)
+![image](https://user-images.githubusercontent.com/47103479/147248748-4cadd3f0-3726-42c7-9b04-5861121c3988.png)
+![image](https://user-images.githubusercontent.com/47103479/147248858-0d1cde13-a6b2-461c-8ee8-ba788a51f740.png)
+![image](https://user-images.githubusercontent.com/47103479/147249064-716ee5e5-562e-4bd6-9bd6-75d4aa9e3afa.png)
+
