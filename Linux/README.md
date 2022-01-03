@@ -45,4 +45,39 @@
 - bash ss_test
 - which bash 
 - chmod 755 ss_test 
-- 
+
+# 유닉스 커맨드 라인 
+## CLI 환경과 유닉스
+- 유닉스(Unix-certified)와 유사 유닉스(Unix-like)
+![image](https://user-images.githubusercontent.com/47103479/147937170-66e0c221-de22-4a4a-b344-fdac88a6e188.png)
+![image](https://user-images.githubusercontent.com/47103479/147937214-4f8f4cee-7fc8-4f2b-8219-cfa529d6e59b.png)
+
+- BSD(Berkerly Software Distribution)운영 체제
+  - BSD는 리눅스보다도 더 이전에 탄생한 운영 체제
+  - 오늘날의 macOS는 Unix - BSD - NeXTStep - macOS 순의 역사를 거쳐 탄생한 것
+
+## 인자 옵션
+- 인자는 커맨드가 작동할 대상을 지정하기 위해 사용
+  - 인자(커맨드 동작 대상자 지정) cal 2030 / cal 3 2030
+- 옵션은 커맨드가 구체적으로 어떤 방식으로 동작할지를 지시하기 위해 사용
+  - 옵션(커맨드의 구체적인 동작 방식 지정) : cal -y , 
+
+
+## 우부투 설치
+- 필수 설치 
+  - Oracle VM VirtualBox
+  - 우분투(https://ubuntu.com/download/desktop)
+  - 우분투 가상 환경 만든뒤에 컨트롤러:IDE에 다운받은 우분투 경로 설정 후 start 한뒤에 옵션 설정 
+![image](https://user-images.githubusercontent.com/47103479/147939476-bbb871af-af31-4ef8-bd66-c5ad1c724d66.png)
+![image](https://user-images.githubusercontent.com/47103479/147943962-92d73dc2-cd62-4c0d-823b-f8203e281e57.png)
+
+# code
+```shell
+$ clear
+$ date
+$ cal 
+$ sudo apt install ncal
+```
+
+![image](https://user-images.githubusercontent.com/47103479/147945114-1752f7a4-6856-4024-b301-b8fd0f0ffecd.png)
+![image](https://user-images.githubusercontent.com/47103479/147945144-2d183139-0432-4fcf-bff4-969ad8d2220c.png)
