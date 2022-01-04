@@ -71,13 +71,48 @@
 ![image](https://user-images.githubusercontent.com/47103479/147939476-bbb871af-af31-4ef8-bd66-c5ad1c724d66.png)
 ![image](https://user-images.githubusercontent.com/47103479/147943962-92d73dc2-cd62-4c0d-823b-f8203e281e57.png)
 
+## man
+- man [모르는 커맨드]
+![image](https://user-images.githubusercontent.com/47103479/148059251-efee27f3-97d6-46d0-aa03-d7b4274c13ef.png)
+
+  - 1. 섹션, 매뉴얼 이름 : DATE(1)에서 1은 공식 매뉴얼의 전체 내용 중 몇 번째 섹션에 해당하는 곳인지를 말함. 대부분의 유닉스 계열의 운영체제는 아래와 같은 여러 섹션으로 구성된 공식 메뉴얼을 갖고 있음
+  - 2. NAME : 커맨드의 이름과 커맨드에 대한 간단한 설명
+  - 3. SYNOPSIS : 어떻게 커맨드를 실행할 수 있는지, 사용 가능한 형식(인자, 옵션들의 조합)을 보여줍니다. 지금 보면 대괄호 안에 있는 것들(-jRu)이 사용 가능한 옵션을 나타냄, 대괄호 없는 new_date 같은 것이 인자
+  - 4. DESCRIPTION : 커맨드에 대한 좀더 자세한 설명과 각 옵션에 대한 설명
+
+## 디렉토리와 파일
+![image](https://user-images.githubusercontent.com/47103479/148059550-2aff96f8-cc20-4bee-a222-0f9f6e5041d4.png)
+
+- 틸드(Tilde) : ~ 현재 사용자의 홈 디렉토리 
+- pwd(print the name of working directory) : 현재 작업중인 워킹 디렉토리 
+- cd(change directory) : 디렉토리를 변경 
+
+- 절대 경로
+  - 루트 디렉토리를 기준으로 어떤 파일이나 디렉토리가 가지고 있는 고유한 경로 (/Users/js/Document)
+- 상대 경로
+  - 나의 현재 위치를 기준으로 나타낸 경로(./Documnet)
+![image](https://user-images.githubusercontent.com/47103479/148065863-51d80497-39b7-4580-9dd2-f8c96ee1557f.png)
+
+
 # code
 ```shell
 $ clear
 $ date
 $ cal 
 $ sudo apt install ncal
+$ man cal : 공식문서 help (스페이스바 or 아래화살표)
+cd / : 루트 디렉토리로 감 
+cd ~ : 홈 디렉토리(cd /Users/js) 
+cd - : 바로 직전에 있는 경로로 이동 
+ls : 현재 자식 디레토리에 있는 모든 걸 보여줌
+ls - l(long listing format) : 결과를 긴 리스트 형식으로 보여줌 
+ls -a(all) : 숨겨져 있는 자식 디렉토리나 파일을 볼 수 있음,(숨겨져있는설정파일들)
+ls -a -l, ls-al : 숨겨져+자세한것들 
+ls -d(directory) : 디렉토리 자체의 정보 , 특정 디렉토리나 파일의 정보 -> ls 커맨드의 인자 , 디렉토리 자체의 정보 -> -d 옵션
 ```
 
 ![image](https://user-images.githubusercontent.com/47103479/147945114-1752f7a4-6856-4024-b301-b8fd0f0ffecd.png)
 ![image](https://user-images.githubusercontent.com/47103479/147945144-2d183139-0432-4fcf-bff4-969ad8d2220c.png)
+![image](https://user-images.githubusercontent.com/47103479/148065444-6d22eaae-2315-44a9-8b0b-5109a3232ae2.png)
+![image](https://user-images.githubusercontent.com/47103479/148065480-2667c8e8-03af-4155-921a-cc885ce22d8a.png)
+![image](https://user-images.githubusercontent.com/47103479/148065787-0a7412b3-803e-4520-83d7-36dbd46a7ac6.png)
