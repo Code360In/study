@@ -101,14 +101,23 @@ $ date
 $ cal 
 $ sudo apt install ncal
 $ man cal : 공식문서 help (스페이스바 or 아래화살표)
-cd / : 루트 디렉토리로 감 
-cd ~ : 홈 디렉토리(cd /Users/js) 
-cd - : 바로 직전에 있는 경로로 이동 
-ls : 현재 자식 디레토리에 있는 모든 걸 보여줌
-ls - l(long listing format) : 결과를 긴 리스트 형식으로 보여줌 
-ls -a(all) : 숨겨져 있는 자식 디렉토리나 파일을 볼 수 있음,(숨겨져있는설정파일들)
-ls -a -l, ls-al : 숨겨져+자세한것들 
-ls -d(directory) : 디렉토리 자체의 정보 , 특정 디렉토리나 파일의 정보 -> ls 커맨드의 인자 , 디렉토리 자체의 정보 -> -d 옵션
+$ cd / : 루트 디렉토리로 감 
+$ cd ~ : 홈 디렉토리(cd /Users/js) 
+$ cd - : 바로 직전에 있는 경로로 이동 
+$ ls : 현재 자식 디레토리에 있는 모든 걸 보여줌
+$ ls - l(long listing format) : 결과를 긴 리스트 형식으로 보여줌 
+$ ls -a(all) : 숨겨져 있는 자식 디렉토리나 파일을 볼 수 있음,(숨겨져있는설정파일들)
+$ ls -a -l, ls-al : 숨겨져+자세한것들 
+$ ls -d(directory) : 디렉토리 자체의 정보 , 특정 디렉토리나 파일의 정보 -> ls 커맨드의 인자 , 디렉토리 자체의 정보 -> -d 옵션
+$ mkidr [폴더명] : 디렉토리 만들기(make directroy)
+$ touch [파일명] : 파일 만들기 
+$ mv [파일명] [옮길장소]  : 디렉토리나 파일을 옮김(move)
+$ mv [파일명] [바꿀이름] : 디렉토리나 파일의 이름을 변경
+$ cp [원본파일] [복사할파일] : copy $ paste 복사&붙여넣기(-i옵션, -r 옵션)
+  - -i 옵션 : interactive : 상호 작용하는 사용자에게 확인 받기 
+  - -r 옵션 : 디렉토리 복사-붙여넣기할때 recursive, 재귀적, 자신이 자신을 반복적으로 호출
+$ rm [삭제파일] : remove 디렉토리와 파일 삭제 (-r 옵션)
+$ rm -r -i [삭제파일] : 삭제 꿀팁 
 ```
 
 ![image](https://user-images.githubusercontent.com/47103479/147945114-1752f7a4-6856-4024-b301-b8fd0f0ffecd.png)
@@ -116,3 +125,5 @@ ls -d(directory) : 디렉토리 자체의 정보 , 특정 디렉토리나 파일
 ![image](https://user-images.githubusercontent.com/47103479/148065444-6d22eaae-2315-44a9-8b0b-5109a3232ae2.png)
 ![image](https://user-images.githubusercontent.com/47103479/148065480-2667c8e8-03af-4155-921a-cc885ce22d8a.png)
 ![image](https://user-images.githubusercontent.com/47103479/148065787-0a7412b3-803e-4520-83d7-36dbd46a7ac6.png)
+![image](https://user-images.githubusercontent.com/47103479/148227789-face1068-a720-4922-9bec-ef146c648ecb.png)
+![image](https://user-images.githubusercontent.com/47103479/148228606-135f5489-07f2-4de2-bb0b-90ba6a443ec9.png)
