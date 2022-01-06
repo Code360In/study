@@ -96,10 +96,10 @@
 
 # code
 ```shell
-$ clear
-$ date
-$ cal 
-$ sudo apt install ncal
+$ clear : 터미널 화면을 깔끔하게
+$ date : 날짜 출력
+$ cal  : 달력 출력
+$ sudo apt install ncal : 라이브러리 설치 
 $ man cal : 공식문서 help (스페이스바 or 아래화살표)
 $ cd / : 루트 디렉토리로 감 
 $ cd ~ : 홈 디렉토리(cd /Users/js) 
@@ -110,6 +110,7 @@ $ ls -a(all) : 숨겨져 있는 자식 디렉토리나 파일을 볼 수 있음,
 $ ls -a -l, ls-al : 숨겨져+자세한것들 
 $ ls -d(directory) : 디렉토리 자체의 정보 , 특정 디렉토리나 파일의 정보 -> ls 커맨드의 인자 , 디렉토리 자체의 정보 -> -d 옵션
 $ mkidr [폴더명] : 디렉토리 만들기(make directroy)
+  - mkidr 'dev programming' : 공백이 있는 디렉토리나 파일이름 사용시 작은따옴표 사용 
 $ touch [파일명] : 파일 만들기 
 $ mv [파일명] [옮길장소]  : 디렉토리나 파일을 옮김(move)
 $ mv [파일명] [바꿀이름] : 디렉토리나 파일의 이름을 변경
@@ -118,6 +119,16 @@ $ cp [원본파일] [복사할파일] : copy $ paste 복사&붙여넣기(-i옵�
   - -r 옵션 : 디렉토리 복사-붙여넣기할때 recursive, 재귀적, 자신이 자신을 반복적으로 호출
 $ rm [삭제파일] : remove 디렉토리와 파일 삭제 (-r 옵션)
 $ rm -r -i [삭제파일] : 삭제 꿀팁 
+$ cat [파일명] : concatenate, 이어 붙이다, 파일들의 내용을 이어서 출력 , 봐야 할 내용이 단순할 때
+$ less [파일명] : 한 화면에 하나의 파일을 보여줌 , 봐야할 내용이 많거나 하나씩 봐야할 때 
+  - :n (next 다음 파일로 이동) , :p (previous 이전 파일로 이동) 
+  - 화살표로 이동, space(한줄단위로이동), b(위로 한 페이지 이동) G(가장 마지막으로 이동) g(가장 처음으로 이동) q(quit)
+$ head -n 20 [파일명] : 파일의 맨 앞부분을 보여줌(옵션 n, 20줄 출력)
+$ tail [파일명] : 파일의 맨 뒷부분을 출력(default 10)
+$ history : 사용한 커맨드의 내역을 보여줌 
+  - ![history내 사용할 해당번호 123] : history 상에서 커맨드 실행 
+$ ctrl + a : 커서가 맨 앞으로 이동 
+$ ctrl + e : 커서가 맨 뒤로 이동 
 ```
 
 ![image](https://user-images.githubusercontent.com/47103479/147945114-1752f7a4-6856-4024-b301-b8fd0f0ffecd.png)
