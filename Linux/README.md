@@ -92,7 +92,64 @@
 - 상대 경로
   - 나의 현재 위치를 기준으로 나타낸 경로(./Documnet)
 ![image](https://user-images.githubusercontent.com/47103479/148065863-51d80497-39b7-4580-9dd2-f8c96ee1557f.png)
+![image](https://user-images.githubusercontent.com/47103479/148631918-6867bef4-3964-4818-a3cd-20a20e90a4ad.png)
+![image](https://user-images.githubusercontent.com/47103479/148631919-e83ab5f3-0f65-4408-af83-c0ba9c833ffd.png)
+![image](https://user-images.githubusercontent.com/47103479/148631921-34203435-cc7d-40e5-b110-882b10ff797b.png)
+![image](https://user-images.githubusercontent.com/47103479/148631923-beec8e0f-dd57-48f9-946d-0bf167cfc51b.png)
 
+# Vim(vi improved)
+- Vim 공식 사용 설명서(https://vimhelp.org/#help.txt)
+- Vim을 게임처럼 재미있게 배울 수 있는 사이트(https://vim-adventures.com/)
+![image](https://user-images.githubusercontent.com/47103479/148631915-8094e46e-a9f4-4c4d-865b-9bc7fba11ecb.png)
+
+- 원래 있던 vi라는 텍스트 에디터 프로그램의 더 향상된(improved) 버전
+- 일반 모드(Normal Mode)
+- 입력 모드(Insert Mode)
+- 비주얼 모드(Visual Mode) :v(한칸씩) , V(줄단위로 블록지정할때)
+- 명령 모드(Command Mode)
+![image](https://user-images.githubusercontent.com/47103479/148630550-a95b622c-bb19-476b-8ba6-9ee4ccaa3095.png)
+![image](https://user-images.githubusercontent.com/47103479/148630592-ec6cb36a-feb3-4dd3-bf62-4c4b6dae8a6d.png)
+
+```shell
+$ i : 입력모드로 전환 
+$ esc : 일반모드
+$ a : 커서를 한 칸 뒤로 옮기고 입력 모드로 전환 
+$ I : insert, 커서를 첫 번째 칸으로 옮기고 입력모드로 전환 
+$ A : 커서를 맨 마지막 카능로 옮기고 입력 모드로 전환 
+$ o : open, 커서를 다음 줄로 옮기고 입력 모드로 전환
+$ O : 커서 위에 빈 줄이 생기고 입력 모드로 전환 
+$ : : 명령 모드로 전환 
+$ w [파일이름] : write, 저장하기 
+$ q : quit, 나가기 
+$ ! : 강제 실행 
+$ /[텍스트] : 명령 모드로 전환 ,텍스트 검색 
+$ n : next, 다음 검색 내용으로 이동(N : 역방향 탐색)
+$ s/[텍스트]/[바꿀텍스트] : subtitute, 텍스트 대체
+$ % : 범위를 파일 전체로 
+$ g : global, 문장에 등장하는 모든 단어 변경 
+$ c : confirm, 확인 
+  - $ :%s/!/#/g : 모든 !를 #으로 바꿈
+  - $ :%s/!/#/gc : 사용자가 바꿀걸 하나하나 확인해가면서 바꿈 y/n  
+$ ctrl + g : 내 커서의 위치를 알려줌 
+$ 0(숫자) : 커서가 줄의 첫 번째 칸으로 이동 
+$ $ : 커서가 줄의 마지막 칸으로 이동 
+$ gg : 파일의 맨 처음으로 이동
+$ G : 파일의 맨 마지막으로 이동 
+$ x : 텍스트 한 칸씩 삭제 
+  - 숫자 + x : 원하는 만큼 삭제
+$ dd : 문장 삭제하기 
+$ u : undo , 이전 작업 취소 
+$ y : yank, 복사하기 
+$ p : paste, 커서 다음 칸에 붙여넣기(P : 커서 이전 칸에 붙여넣기) 
+$ d : delete, 삭제하기 
+$ dd : 한 줄을 통째로 삭제 
+```
+5k : 위로 5줄
+![image](https://user-images.githubusercontent.com/47103479/148631607-3c8a6fe8-6cdb-4053-9504-95960e2a90e8.png)
+
+- sudo :  sudo 라고 쓴 이유는 시스템에 프로그램을 설치할 때는 일반 사용자가 아닌 그보다 더 높은 관리자 권한이 필요하기 때문
+  - 외부 프로그램 설치가 그런 작업 중 대표적인 예인 거구요. 사실 이 부분을 더 잘 알려면 유닉스에서 사용자 권한(permission)이라고 하는 부분
+  - 관리자 계정으로서의 권한을 갖고 어떤 작업을 해야할 때 sudo 를 가장 맨 앞에 써줘야 한다는 사실
 
 # code
 ```shell
@@ -129,6 +186,7 @@ $ history : 사용한 커맨드의 내역을 보여줌
   - ![history내 사용할 해당번호 123] : history 상에서 커맨드 실행 
 $ ctrl + a : 커서가 맨 앞으로 이동 
 $ ctrl + e : 커서가 맨 뒤로 이동 
+$ VIM
 ```
 
 ![image](https://user-images.githubusercontent.com/47103479/147945114-1752f7a4-6856-4024-b301-b8fd0f0ffecd.png)
