@@ -11,6 +11,7 @@
 - 캐글 문제로 배우는 데이터 분석 (2021.12)
 - 도커(Docker)로 시작하는 가상화&클라우드 컴퓨팅(2021.12)
 - 코딩은 실습이지! - 유닉스 커맨드 라인 (2022.01.08)
+- 눈떠보니 코딩 테스트 전날 (2022.01.10)
 
 ## 부트캠프
 - 분석 관련 교육 수료 : 태블로 부트캠프 수료(2021.08~2021.10)
@@ -29,6 +30,7 @@
 ## 인프런
 ![image](https://user-images.githubusercontent.com/47103479/136217037-1f20cc63-50dc-402d-86a4-81856a585ee2.png)
 ![image](https://user-images.githubusercontent.com/47103479/142766914-6f746100-1224-40ff-b52c-7da33dc2ce70.png)
+![image](https://user-images.githubusercontent.com/47103479/148762944-8e2d7772-ac3e-4ac1-a879-3a0fac91a413.png)
 
 ## T아카데미
 ![image](https://user-images.githubusercontent.com/47103479/136701444-7c32efeb-9cd3-4350-bb77-406843614f84.png)
